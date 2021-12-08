@@ -1,0 +1,31 @@
+:root {
+  --accent-color: #00d7ff;
+
+  --header-bg-color: #242a37;
+  --header-text-color: #7b8aa4;
+  --header-symb-color: #3e4e6c;
+
+  --main-bg-color: #f2f3f7;
+  --secondary-bg-color: #ffffff;
+  //   --main-font-style: HelveticaNeueCyr;
+  --main-text-color: #282828;
+  --secondary-text-color: #b9c3c8;
+  --challenge-main-txt-color: #ffffff;
+  --challenge-main-bg-color: #15395a;
+
+  --card-box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
+    3px 4px 4px rgba(21, 57, 90, 0.03);
+
+  --stuff-bg-color: #b9c3c8;
+  --family-bg-color: #ffe6d3;
+  --health-bg-color: #cdf7ff;
+  --learning-bg-color: #fff6c0;
+  --leisure-bg-color: #f8d2ff;
+  --work-bg-color: #d3f6ce;
+
+  --btn-bg-color: #ff851c;
+  --btn-text-color: #ffffff;
+
+  --duration-main: 250ms; //время для анимации текста
+  --timing-function-main: cubic-bezier(0.4, 0, 0.2, 1);
+}
