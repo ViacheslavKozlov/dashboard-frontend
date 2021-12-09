@@ -1,19 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-const LoginPage = () => {
+const DashboardPage = () => {
   return (
     <>
-      <h1>LoginPage</h1>
+      <h1>Dashboard page</h1>
       <nav>
         <ul>
           <li>
-            <NavLink to="/register" exact>
-              RegPage
+            <NavLink to="/" exact>
+              LoginPge
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard" exact>
-              Dashboard
+            <NavLink to="/register" exact>
+              RegPage
             </NavLink>
           </li>
         </ul>
@@ -22,4 +22,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default DashboardPage;
