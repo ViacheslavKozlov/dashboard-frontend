@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import s from "./Modal.module.scss";
+// import React from 'react'
 
 const modalRoot = document.querySelector("#modal-root");
 
