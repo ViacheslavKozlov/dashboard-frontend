@@ -2,7 +2,7 @@
   font-family: HelveticaNeueCyr;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 44px;
   line-height: 24px;
   text-align: center;
   letter-spacing: 0.02em;
@@ -16,9 +16,10 @@
   border: none;
   cursor: pointer;
 }
-.plus:hover,
-.plus:focus {
-  background: #be5c06;
+.plus:hover {
+  color: #ff851c;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(252, 132, 60, 1);
 }
 .go {
   padding-bottom: 8px;
@@ -38,6 +39,12 @@
   border: none;
   cursor: pointer;
 }
+.go:hover {
+  color: #ff851c;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(252, 132, 60, 1);
+}
+
 .cancel {
   font-family: HelveticaNeueCyr;
   font-style: normal;
@@ -50,6 +57,9 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+.cancel:hover {
+  color: #107902;
 }
 .delete {
   font-family: HelveticaNeueCyr;
@@ -64,6 +74,9 @@
   cursor: pointer;
   border: none;
 }
+.delete:hover {
+  color: #860420;
+}
 .create {
   font-family: HelveticaNeueCyr;
   font-style: normal;
@@ -76,4 +89,7 @@
   color: rgba(0, 215, 255, 1);
   border: none;
   cursor: pointer;
+}
+.create:hover {
+  color: rgb(0, 162, 190);
 }
