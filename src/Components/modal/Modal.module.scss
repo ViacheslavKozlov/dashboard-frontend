@@ -1,0 +1,24 @@
+.Overlay {
+  position: fixed;
+  width: 205px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(21, 57, 90, 0.3);
+  z-index: 1200;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.Modal {
+  margin-top: 75px;
+  margin-bottom: 45px;
+  text-align: center;
+  width: 160px;
+  height: 80px;
+  border-radius: 10px;
+  position: relative;
+  background: #ffffff;
+}
