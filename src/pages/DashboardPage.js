@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import ToDo from "../Components/toDo/ToDo";
 const DashboardPage = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const DashboardPage = () => {
           </li>
         </ul>
       </nav>
+      <ToDo />
     </>
   );
 };
