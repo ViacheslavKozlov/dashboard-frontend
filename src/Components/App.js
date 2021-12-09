@@ -9,6 +9,7 @@ import { isAuthSelector } from "../redux/auth/authSelectors.js";
 // import DashboardPage from "../pages/DashboardPage";
 // import LoginPage from "../pages/LoginPage";
 // import RegPage from "../pages/RegPage";
+
 const DashboardPage = lazy(
   () =>
     import("../pages/DashboardPage.js") /*webpackChunkName: 'DashboardPage' */
@@ -26,15 +27,15 @@ function App() {
     <>
       <Switch>
         <Suspense fallback={null}>
-          <PublicRoute exact path="/">
+          <PublicRoute exact path="/" restricted redirectTo="/dashboard">
             <LoginPage />
           </PublicRoute>
-          <PublicRoute path="/register" restricted redirectTo="/">
+          <PublicRoute path="/register" restricted redirectTo="/dashboard">
             <RegPage />
           </PublicRoute>
-          <PrivateRoute path="/dashboard" restricted redirectTo="/">
+          <PublicRoute path="/dashboard" restricted redirectTo="/">
             <DashboardPage />
-          </PrivateRoute>
+          </PublicRoute>
           {isLoggedIn ? <Redirect to="/dashboard" /> : <Redirect to="/" />}
         </Suspense>
       </Switch>
