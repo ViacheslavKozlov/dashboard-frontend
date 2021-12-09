@@ -3,10 +3,11 @@ import { Redirect, Switch } from "react-router";
 import PublicRoute from "./PuplicRoute";
 import PrivateRoute from "./PrivateRoute";
 import { useSelector } from "react-redux";
-import { authSelectors } from "../redux/auth/authSelectors";
+import { isAuthSelector } from "../redux/auth/authSelectors.js";
 
 const DashboardPage = lazy(
-  () => import("../pages/HomePage.js") /*webpackChunkName: 'DashboardPage' */
+  () =>
+    import("../pages/DashboardPage.js") /*webpackChunkName: 'DashboardPage' */
 );
 const LoginPage = lazy(
   () => import("../pages/LoginPage.js") /*webpackChunkName: 'LoginPage' */
@@ -16,12 +17,12 @@ const RegPage = lazy(
 );
 
 const MainRoutes = () => {
-  const isLoggedIn = useSelector(authSelectors.isAuthSelector);
+  const isLoggedIn = useSelector(isAuthSelector);
 
   return (
     <>
       <Switch>
-        <Suspense>
+        <Suspense fallback="">
           <PublicRoute exact path="/">
             <LoginPage />
           </PublicRoute>
