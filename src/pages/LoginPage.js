@@ -1,14 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Auth from "../Components/auth/Auth";
+
 const LoginPage = () => {
   return (
     <>
-      <h1>LoginPage</h1>
+      {/* <h1>LoginPage</h1> */}
       <nav>
         <ul>
           <li>
             <NavLink to="/register" exact>
-              RegPage
+              {/* RegPage */}
+              <Auth />
             </NavLink>
           </li>
           <li>
