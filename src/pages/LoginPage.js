@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const LoginPage = () => {
   return (
     <>
-      <h1>LoginPage</h1>
+      <h2>LoginPage</h2>
       <nav>
         <ul>
           <li>
