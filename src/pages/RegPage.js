@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const RegPage = () => {
   return (
     <>
-      <h1>Reg page</h1>
+      <h2>Reg page</h2>
       <nav>
         <ul>
           <li>
