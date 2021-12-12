@@ -1,24 +1,19 @@
 import React from "react";
 import useDeviceSizes from "../../hooks/useDeviceSizes";
 import UserMenu from "../userMenu/UserMenu";
+import { HeaderContainer } from "./HeaderStyled";
 
 const Header = () => {
   const { isMobileDevice } = useDeviceSizes();
   return (
-    <>
-      <div>
-        <h1>Dashboard</h1>
-        {isMobileDevice ? (
-          <div>
-            <UserMenu />
-          </div>
-        ) : (
-          <div>
-            <UserMenu />
-          </div>
-        )}
+    <HeaderContainer>
+      <div className="container">
+        <div className={isMobileDevice ? "header-mob" : "header-desc"}>
+          <h1 className="header-logo">Dashboard</h1>
+          <UserMenu />
+        </div>
       </div>
-    </>
+    </HeaderContainer>
   );
 };
 
