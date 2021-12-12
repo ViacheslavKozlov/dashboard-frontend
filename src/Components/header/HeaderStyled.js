@@ -29,11 +29,10 @@ export const HeaderContainer = styled.header`
   }
 
   .header-logo {
-    display: block;
     font-style: normal;
     font-weight: bold;
     font-size: 21px;
-    line-height: 21px;
+    line-height: 1;
     letter-spacing: 0.02em;
     color: #00d7ff;
   }
