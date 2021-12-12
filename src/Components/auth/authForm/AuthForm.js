@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { AuthFormContainer } from "./AuthFormStyled";
+import { Button } from "../../button/Button";
+import {
+  AuthBgContainer,
+  AuthContainer,
+  AuthDiscrContainer,
+  AuthFormContainer,
+} from "./AuthFormStyled";
+// import sprite from "../../../icons/icons.svg";
 
 const AuthForm = ({ signUp, logIn }) => {
   const [email, setEmail] = useState("");
@@ -23,59 +30,66 @@ const AuthForm = ({ signUp, logIn }) => {
   };
 
   return (
-    <AuthFormContainer>
-      <h1 className="authTitle">Questify</h1>
-      <p className="authDicsription">
-        Questify will turn your life into a thrilling game full of amazing
-        quests and exciting challenges.
-      </p>
-      <p className="authChooseText">
-        Choose your name to log in or
-        <a href="/signup">sign up</a>
-      </p>
-      <form onSubmit={onHandleSubmit} className="authForm">
-        {location.pathname === "/signup" && (
+    <AuthBgContainer>
+      <AuthFormContainer>
+        <AuthDiscrContainer>
+          <h1 className="authTitle">Questify</h1>
+          <p className="authDicsription">
+            Questify will turn your life into a thrilling game full of amazing
+            quests and exciting challenges.
+          </p>
+          <p className="authChooseText">
+            Choose your name to Log in or
+            <a href="/register">SIGN UP</a>
+          </p>
+        </AuthDiscrContainer>
+        <form onSubmit={onHandleSubmit} className="authForm">
+          {location.pathname === "/register" && (
+            <label className="inputName">
+              <input
+                type="text"
+                value={displayName}
+                onChange={onHandleChange}
+                name="displayName"
+                placeholder="Name"
+                required
+                pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+                className="input"
+              />
+            </label>
+          )}
           <label className="inputName">
-            Name
             <input
               type="text"
-              value={displayName}
+              value={email}
               onChange={onHandleChange}
-              name="displayName"
+              name="email"
+              placeholder="Email"
               className="input"
             />
           </label>
-        )}
-        <label className="inputName">
-          Email
-          <input
-            type="text"
-            value={email}
-            onChange={onHandleChange}
-            name="email"
-            className="input"
-          />
-        </label>
-        <label className="inputName">
-          Password
-          <input
-            type="text"
-            value={password}
-            onChange={onHandleChange}
-            required
-            pattern="^[A-Za-z]+\d+.*$"
-            title="Пароль должен включать только цифры и буквы"
-            name="password"
-            className="input"
-          />
-        </label>
-        <button type="submit" className="btn">
-          <svg width="52" height="52">
-            <use href="../../icons/icons.svg#icon-button-Add" />
-          </svg>
-        </button>
-      </form>
-    </AuthFormContainer>
+          <label className="inputName">
+            <input
+              type="text"
+              value={password}
+              onChange={onHandleChange}
+              required
+              pattern="^[A-Za-z]+\d+.*$"
+              title="Пароль должен включать только цифры и буквы"
+              name="password"
+              placeholder="Password"
+              className="input"
+            />
+          </label>
+          <div className="button_wrapper">
+            <Button text="go!" style="go" />
+          </div>
+          {/* // onClick={onMobileSubmit}
+        /> */}
+        </form>
+      </AuthFormContainer>
+    </AuthBgContainer>
   );
 };
 
