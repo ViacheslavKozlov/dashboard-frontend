@@ -1,0 +1,9 @@
+.content-appear {
+  translate: ();
+  transform: scale(0.9), translate(10, 10);
+}
+
+.content-appear-active {
+  transform: scale(1), translate(100, 100);
+  transition: transform 250ms linear;
+}

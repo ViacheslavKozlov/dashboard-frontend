@@ -1,0 +1,51 @@
+.flatpickr-input {
+  max-width: 130px;
+  border: none;
+  font-size: 14px;
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.flatpickr-input-challange {
+  color: var(--white);
+}
+
+.flatpickr-input:focus {
+  outline: #47aad5 solid 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .dateTimeContainer {
+    width: 248px;
+  }
+}
+.dateTimeBox {
+  display: flex;
+  align-items: center;
+}
+
+.dateTimeContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 163px;
+}
+.dateTimeButton {
+  height: 16px;
+}
+.flatpickrInputIconCalendar {
+  width: 16px;
+  height: 16px;
+
+  filter: drop-shadow(0px 3px 4px rgba(0, 215, 255, 0.25));
+}
+
+.flatpickrInputIconCalendar:hover {
+  fill: currentColor;
+  color: #47aad5;
+}
+
+.flatpickrInputIconCalendar:active {
+  fill: currentColor;
+  color: #3f93b7;
+}

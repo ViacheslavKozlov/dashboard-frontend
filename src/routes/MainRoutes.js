@@ -1,9 +1,10 @@
 import { lazy, Suspense } from "react";
-import { Redirect, Switch } from "react-router";
+import { Switch } from "react-router";
 import PublicRoute from "./PuplicRoute";
 import PrivateRoute from "./PrivateRoute";
 import { useSelector } from "react-redux";
 import { isAuthSelector } from "../redux/auth/authSelectors.js";
+import { Redirect } from "react-router-dom";
 
 const DashboardPage = lazy(
   () =>
