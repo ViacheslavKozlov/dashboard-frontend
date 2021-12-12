@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-export const UserMenuWrapper = styled.header`
-  display: flex;
-
+export const UserMenuWrapper = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: calc(50% + 80px);
   .user-logo {
     display: flex;
     align-items: center;
@@ -16,6 +18,7 @@ export const UserMenuWrapper = styled.header`
     color: #ffffff;
     background: #3e4e6c;
     border-radius: 50%;
+    margin-right: 10px;
   }
 
   .user-name {
@@ -24,10 +27,21 @@ export const UserMenuWrapper = styled.header`
     justify-content: center;
     font-size: 17px;
     line-height: 1;
-
     letter-spacing: 0.02em;
-
     color: #7b8aa4;
+    margin-right: calc(100% - 210px);
+  }
+  .user-logout {
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  .user-logout-logo {
+    width: 22px;
+    height: 16px;
+    fill: #3e4e6c;
   }
 `;
 // &:hover {

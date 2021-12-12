@@ -7,23 +7,12 @@ const Header = () => {
   const { isMobileDevice } = useDeviceSizes();
   return (
     <HeaderContainer>
-      {/* <div className="header">
-        <h1 className="headerLogo">Dashboard</h1></div> */}
-      {isMobileDevice ? (
-        <div>
-          <div className="header-mob">
-            <h1 className="header-logo">Dashboard</h1>
-            <UserMenu />
-          </div>
+      <div className="container">
+        <div className={isMobileDevice ? "header-mob" : "header-desc"}>
+          <h1 className="header-logo">Dashboard</h1>
+          <UserMenu />
         </div>
-      ) : (
-        <div>
-          <div className="header-desc">
-            <h1 className="header-logo">Dashboard</h1>
-            <UserMenu />
-          </div>
-        </div>
-      )}
+      </div>
     </HeaderContainer>
   );
 };
