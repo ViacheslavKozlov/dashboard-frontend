@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+
 import StaticCard from "../staticCard/StaticCard";
 import CreateEditCard from "../createEditCard/CreateEditCard";
 
@@ -14,8 +15,13 @@ const Card = ({
 }) => {
   const [editFormShow, setEditFormShow] = useState(false);
   const [isDeleteModalShown, setIsDeleteModalShown] = useState(false);
+  const [completedStatus, setCompleted] = useState(completed);
 
-  const onStaticCardClick = () => {
+  const onStaticCardClick = (e) => {
+    if (e.target.id === "Star" || e.target.id === "trophy") {
+      setCompleted(true);
+      return;
+    }
     if (completed && !isDeleteModalShown) {
       setIsDeleteModalShown(true);
     } else if (!completed) {
@@ -23,16 +29,26 @@ const Card = ({
     }
   };
 
+  const handleCardCompletedStatus = () => {
+    setCompleted(true);
+  };
+
+  const onCompletingModalClosed = () => {
+    setCompleted(false);
+  };
+
   return editFormShow ? (
     <CreateEditCard
       cardId={id}
       isChallengeProp={isChallenge}
-      isCompletedProp={completed}
+      completed={completedStatus}
       textProp={taskName}
       difficultyProp={difficulty}
       categoryProp={category}
       deadlineProp={taskDate}
       handleHideCard={() => setEditFormShow(false)}
+      handleCardCompletedStatus={handleCardCompletedStatus}
+      onCompletingModalClosed={onCompletingModalClosed}
     />
   ) : (
     <div onClick={onStaticCardClick}>
@@ -43,9 +59,12 @@ const Card = ({
         category={category}
         taskDate={taskDate}
         taskName={taskName}
-        completed={completed}
+        completed={completedStatus}
         isDeleteModalShown={isDeleteModalShown}
         onCancelDelete={() => setIsDeleteModalShown(false)}
+        handleHideCard={() => setEditFormShow(false)}
+        handleCardCompletedStatus={handleCardCompletedStatus}
+        onCompletingModalClosed={onCompletingModalClosed}
       />
     </div>
   );

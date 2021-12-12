@@ -171,7 +171,7 @@ export const CompletedCardStyled = styled.div`
     width: 46px;
     height: 50px;
     z-index: 11;
-    fill: currentColor;
+    fill: var(--white);
     /* color: var(--white); */
   }
 
