@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Header from "../Components/header/Header";
+
 const DashboardPage = () => {
   return (
     <>
-      <h1>Dashboard page</h1>
+      <Header />
+      <h2>Dashboard page</h2>
       <nav>
         <ul>
           <li>
