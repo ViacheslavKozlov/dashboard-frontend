@@ -81,7 +81,7 @@ const DashboardPage = () => {
               DONE
               <Icon
                 className="IconDone"
-                name={doneIsShown ? "triangle-up" : "triangle-down"}
+                name={doneIsShown ? "triangle-down" : "triangle-up"}
                 size={12}
               />
             </button>

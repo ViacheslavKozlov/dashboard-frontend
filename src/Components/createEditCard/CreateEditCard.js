@@ -1,8 +1,7 @@
-import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
-import moment from "moment";
+// import styles from "./CreateEditCard.module.css";
 import DeleteModal from "../deleteModal/DeleteModal";
 import CompletedCard from "../completedCard/CompletedCard";
 import DateTimePicker from "../dateTimePicker/DateTimePicker";
@@ -27,17 +26,19 @@ const ADDITIONAL_TIME = 60000;
 
 const CreateEditCard = ({
   isChallengeProp = false,
-  isCompletedProp = false,
+  completed = false,
   textProp = "",
   difficultyProp = "normal",
   categoryProp = "stuff",
   deadlineProp = new Date(),
   cardId = null,
   handleHideCard,
+  handleCardCompletedStatus,
+  onCompletingModalClosed,
 }) => {
   const dispatch = useDispatch();
   const [isDeleting, setIsDeleting] = useState(false);
-  const [completed, setCompleted] = useState(isCompletedProp);
+  // const [completed, setCompleted] = useState(isCompletedProp);
   const [taskName, setTaskName] = useState(textProp);
   const [isChallenge, setIsChallenge] = useState(isChallengeProp);
   const [category, setCategory] = useState(categoryProp);
@@ -62,27 +63,25 @@ const CreateEditCard = ({
     setIsChallenge((prevState) => !prevState);
   };
 
-  const handleCardCompletedStatus = () => {
-    setCompleted(true);
-  };
+  // const handleCardCompletedStatus = () => {
+  //   setCompleted(true);
+  // };
 
-  const onCompletingModalClosed = () => {
-    setCompleted(false);
-  };
+  // const onCompletingModalClosed = () => {
+  //   setCompleted(false);
+  // };
 
-  const onClickCreateCard = () => {
-    const formatingDate = moment(taskDate).format("YYYY-MM-DD HH:mm");
+  const onClickCreateCard = () =>
     dispatch(
       addNewCardOperation({
         taskName,
-        taskDate: formatingDate,
+        taskDate,
         difficulty,
         category,
         isChallenge,
         completed,
       })
     );
-  };
 
   const handleCreateCard = () => {
     if (taskName.trim() === "") {
@@ -94,8 +93,7 @@ const CreateEditCard = ({
     handleHideCard();
   };
 
-  const onClickEditCard = (date) => {
-    const formatingDate = moment(date).format("YYYY-MM-DD HH:mm");
+  const onClickEditCard = (date) =>
     dispatch(
       editCardOperation(cardId, {
         taskName,
@@ -103,10 +101,9 @@ const CreateEditCard = ({
         completed,
         category,
         difficulty,
-        taskDate: formatingDate,
+        taskDate: date,
       })
     );
-  };
 
   const handleEditCard = () => {
     let date = taskDate;

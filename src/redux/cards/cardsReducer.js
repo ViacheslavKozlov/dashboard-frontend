@@ -34,7 +34,7 @@ const initialState = [
     isChallenge: true,
     difficulty: "normal",
     taskName: "todo2",
-    taskDate: "2021-12-12 18:00",
+    taskDate: "2021-12-12 23:00",
     category: "stuff",
     completed: false,
   },

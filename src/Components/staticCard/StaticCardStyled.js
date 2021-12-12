@@ -38,6 +38,7 @@ export const StaticCardStyled = styled.div`
 
   .IconTrophy,
   .IconStar {
+    cursor: pointer;
     height: 19px;
     width: 19px;
     position: absolute;
