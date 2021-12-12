@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-  background-color: #242a37;
+  background-color: var(--header-bg-color);
   box-shadow: 0px 4px 4px rgba(36, 42, 55, 0.1);
 
   .container {
@@ -34,10 +34,6 @@ export const HeaderContainer = styled.header`
     font-size: 21px;
     line-height: 1;
     letter-spacing: 0.02em;
-    color: #00d7ff;
+    color: var(--accent-color);
   }
 `;
-// &:hover {
-//       fill: #5f73a1;
-//       cursor: pointer;
-//     }

@@ -15,8 +15,8 @@ export const UserMenuWrapper = styled.div`
     font-size: 17px;
     line-height: 0.94;
     letter-spacing: 0.02em;
-    color: #ffffff;
-    background: #3e4e6c;
+    color: var(--btn-text-color);
+    background: var(--header-symb-color);
     border-radius: 50%;
     margin-right: 10px;
   }
@@ -28,7 +28,7 @@ export const UserMenuWrapper = styled.div`
     font-size: 17px;
     line-height: 1;
     letter-spacing: 0.02em;
-    color: #7b8aa4;
+    color: var(--header-text-color);
     margin-right: calc(100% - 210px);
   }
   .user-logout {
@@ -41,7 +41,7 @@ export const UserMenuWrapper = styled.div`
   .user-logout-logo {
     width: 22px;
     height: 16px;
-    fill: #3e4e6c;
+    fill: var(--header-symb-color);
   }
 `;
 // &:hover {
