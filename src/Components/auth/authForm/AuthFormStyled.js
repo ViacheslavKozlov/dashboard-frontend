@@ -176,14 +176,13 @@ export const AuthFormContainer = styled.div`
 export const AuthBgContainer = styled.div`
   background-image: url(${imgMob});
   background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 100%;
+  background-position-y: bottom;
   height: 100vh;
 
   @media ${device.tablet} {
     background-image: url(${imgTab});
-    max-width: 100%;
-    max-height: 100%;
+    background-size: auto 100%;
+    background-position-x: right;
   }
   @media ${device.desc} {
     background-image: url(${imgDesc});
