@@ -19,6 +19,8 @@ import {
   getIsLoadingSelector,
 } from "../redux/cards/cardsSelectors";
 import { DashboardPageStyled } from "./DashboardPageStyled";
+import Header from "../Components/header/Header";
+
 
 const DashboardPage = () => {
   const [doneIsShown, setDoneIsShown] = useState(false);
@@ -61,6 +63,7 @@ const DashboardPage = () => {
     ...getSorted(challengeCards),
   ];
   return (
+<<<<<<< HEAD
     <DashboardPageStyled>
       {isLoading && (
         <ModalLoader>
@@ -68,6 +71,11 @@ const DashboardPage = () => {
         </ModalLoader>
       )}
       <h1>Dashboard page</h1>
+=======
+    <>
+      <Header />
+      <h2>Dashboard page</h2>
+>>>>>>> 52014f5751e3a81fd9dbc1715b910ed3fe9318ca
       <nav>
         <ul>
           <li>
