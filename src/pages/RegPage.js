@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Auth from "../Components/auth/Auth";
 const RegPage = () => {
   return (
     <>
-      <h1>Reg page</h1>
-      <nav>
+      {/* <h1>Reg page</h1> */}
+      <Auth />
+      {/* <nav>
         <ul>
           <li>
             <NavLink to="/" exact>
@@ -17,7 +19,7 @@ const RegPage = () => {
             </NavLink>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </>
   );
 };

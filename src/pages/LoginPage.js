@@ -6,12 +6,12 @@ const LoginPage = () => {
   return (
     <>
       {/* <h1>LoginPage</h1> */}
-      <nav>
+      <Auth />
+      {/* <nav>
         <ul>
           <li>
             <NavLink to="/register" exact>
-              {/* RegPage */}
-              <Auth />
+              RegPage
             </NavLink>
           </li>
           <li>
@@ -20,7 +20,7 @@ const LoginPage = () => {
             </NavLink>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </>
   );
 };
