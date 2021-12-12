@@ -38,6 +38,10 @@
   border: none;
   cursor: pointer;
 }
+.go:hover,
+.go:focus {
+  background: #00d7ff;
+}
 .cancel {
   font-family: HelveticaNeueCyr;
   font-style: normal;
