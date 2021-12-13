@@ -3,8 +3,12 @@ import { useDispatch } from "react-redux";
 import Icon from "../Icon";
 import DeleteModal from "../deleteModal/DeleteModal";
 
-import { removeCardOperation } from "../../redux/cards/cardsOperations";
+import {
+  editCardOperation,
+  removeCardOperation,
+} from "../../redux/cards/cardsOperations";
 import { StaticCardStyled } from "./StaticCardStyled";
+import CompletedCard from "../completedCard/CompletedCard";
 
 const StaticCard = ({
   cardId,
@@ -13,8 +17,11 @@ const StaticCard = ({
   category,
   taskDate,
   taskName,
+  completed,
+  handleHideCard,
   isDeleteModalShown,
   onCancelDelete,
+  onCompletingModalClosed,
 }) => {
   const optionsTime = { hour12: false, hour: "numeric", minute: "numeric" };
   const date = new Date(taskDate).toLocaleTimeString("en-US", optionsTime);
@@ -37,18 +44,40 @@ const StaticCard = ({
     });
   }
 
+  const onStaticContinueClick = () => {
+    dispatch(
+      editCardOperation(cardId, {
+        taskName,
+        isChallenge,
+        completed,
+        category,
+        difficulty,
+        taskDate,
+      })
+    );
+    handleHideCard();
+  };
+
   const isFireShow =
     Date.parse(taskDate) - Date.now() <= 3600000 &&
     Date.parse(taskDate) - Date.now() > 0;
 
   const dispatch = useDispatch();
-  function onDeleteCard() {
+  const onDeleteCard = () => {
     dispatch(removeCardOperation(cardId));
-  }
+  };
 
   return (
     <StaticCardStyled>
       <div className={isChallenge ? "ContainerChallenge" : "baseContainer"}>
+        {completed && (
+          <CompletedCard
+            taskName={taskName}
+            isChallenge={isChallenge}
+            onCompleted={onStaticContinueClick}
+            onClose={onCompletingModalClosed}
+          />
+        )}
         {isDeleteModalShown && (
           <DeleteModal
             isChallenge={isChallenge}

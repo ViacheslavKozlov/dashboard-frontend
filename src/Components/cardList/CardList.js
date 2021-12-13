@@ -49,21 +49,6 @@ const CardList = ({
           )
         )}
       </CardListStyled>
-
-      {/* {cards.length > perPage && (
-        <ReactPaginate
-          pageCount={pageCount}
-          pageRangeDisplayed={pageRange}
-          marginPagesDisplayed={marginPages}
-          previousLabel={"prev"}
-          nextLabel={"next"}
-          breakLabel={breakLabel}
-          breakClassName={"break-me"}
-          onPageChange={handlePageClick}
-          containerClassName={"pagination"}
-          activeClassName={"active"}
-        />
-      )} */}
     </>
   );
 };
