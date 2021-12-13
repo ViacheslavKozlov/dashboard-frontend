@@ -15,12 +15,4 @@ export const CardListStyled = styled.ul`
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
   }
-
-  @media screen and (min-width: 1020px) {
-    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
-  }
-
-  /* @media screen and (min-width: 1280px) {
-    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
-  } */
 `;
