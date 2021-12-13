@@ -19,46 +19,7 @@ import {
   getDoneCardsError,
 } from "./cardsActions";
 
-const initialState = [
-  {
-    id: "1",
-    isChallenge: false,
-    difficulty: "easy",
-    taskName: "todo1",
-    taskDate: "2021-10-12 18:00",
-    category: "stuff",
-    completed: true,
-  },
-  {
-    id: "2",
-    isChallenge: true,
-    difficulty: "normal",
-    taskName: "todo2",
-    taskDate: "2021-12-12 23:00",
-    category: "stuff",
-    completed: false,
-  },
-  {
-    id: "3",
-    isChallenge: false,
-    difficulty: "hard",
-    taskName: "todo3",
-    taskDate: "2021-12-12 20:00",
-    category: "family",
-    completed: false,
-  },
-  {
-    id: "4",
-    isChallenge: false,
-    difficulty: "hard",
-    taskName: "todo4",
-    taskDate: "2021-12-13 18:00",
-    category: "stuff",
-    completed: false,
-  },
-];
-
-const allCardsReducer = createReducer(initialState, {
+const allCardsReducer = createReducer([], {
   [getCardsSucces]: (_, { payload }) => payload,
   [getDoneCardsSuccess]: (state, { payload }) => [...state, ...payload],
   [addNewCardSucces]: (state, { payload }) => [...state, payload],

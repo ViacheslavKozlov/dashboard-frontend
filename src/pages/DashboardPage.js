@@ -7,16 +7,14 @@ import Loaders from "../Components/loader/Loader";
 import ModalLoader from "../Components/modal/modalLoader/ModalLoader";
 import SectionMainPage from "../Components/todaySection/SectionMainPage";
 import TodaySection from "../Components/todaySection/TodaySection";
-import {
-  getActiveCardsOperation,
-  getDoneCardsOperation,
-} from "../redux/cards/cardsOperations";
+import { getActiveCardsOperation } from "../redux/cards/cardsOperations";
 import {
   getActiveTodayCardsSelector,
   getActiveTomorrowCardsSelector,
   getChallengeCardsSelector,
   getDoneCardsSelector,
   getIsLoadingSelector,
+  getUnusedCards,
 } from "../redux/cards/cardsSelectors";
 import { DashboardPageStyled } from "./DashboardPageStyled";
 import Header from "../Components/header/Header";
@@ -34,14 +32,15 @@ const DashboardPage = () => {
   const onShowDone = () => {
     setDoneIsShown(!doneIsShown);
 
-    if (doneCards.length < 1 && !doneIsShown) {
-      dispatch(getDoneCardsOperation());
-    }
+    // if (doneCards.length < 1 && !doneIsShown) {
+    //   dispatch(getDoneCardsOperation());
+    // }
   };
   const activeTodayCards = useSelector(getActiveTodayCardsSelector);
   const activeTomorrowCards = useSelector(getActiveTomorrowCardsSelector);
   const doneCards = useSelector(getDoneCardsSelector);
   const challengeCards = useSelector(getChallengeCardsSelector);
+  const unusedCards = useSelector(getUnusedCards);
   const isLoading = useSelector(getIsLoadingSelector);
 
   const getSorted = (list) => {
@@ -65,6 +64,7 @@ const DashboardPage = () => {
   return (
     <>
       <Header />
+
       <Wrapper>
         <DashboardPageStyled>
           {isLoading && (
@@ -72,25 +72,34 @@ const DashboardPage = () => {
               <Loaders size={100} />
             </ModalLoader>
           )}
-          <TodaySection cards={todayCards} />
-          <SectionMainPage
-            title="TOMORROW"
-            cardList={getSorted(activeTomorrowCards)}
-          />
-          <section className="sectionDone">
-            <div className="lineWrapper">
-              <button className="btnDone" onClick={onShowDone}>
-                DONE
-                <Icon
-                  className="IconDone"
-                  name={doneIsShown ? "triangle-down" : "triangle-up"}
-                  size={12}
-                />
-              </button>
-            </div>
+          <div className="container">
+            <TodaySection cards={todayCards} />
+            <SectionMainPage
+              title="TOMORROW"
+              cardList={getSorted(activeTomorrowCards)}
+            />
 
-            {doneIsShown && <CardList cards={doneCards} />}
-          </section>
+            <SectionMainPage
+              // className="unusedContainer"
+              title="TIME IS OVER"
+              cardList={getSorted(unusedCards)}
+            />
+
+            <section className="sectionDone">
+              <div className="lineWrapper">
+                <button className="btnDone" onClick={onShowDone}>
+                  DONE
+                  <Icon
+                    className="IconDone"
+                    name={doneIsShown ? "triangle-down" : "triangle-up"}
+                    size={12}
+                  />
+                </button>
+              </div>
+
+              {doneIsShown && <CardList cards={doneCards} />}
+            </section>
+          </div>
         </DashboardPageStyled>
       </Wrapper>
     </>

@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const CreateEditCardStyled = styled.div`
   .cardBackdrop {
-    z-index: 101;
+    /* z-index: 101; */
+    /* z-index: 0; */
     position: fixed;
     top: 0;
     bottom: 0;
@@ -18,7 +19,8 @@ export const CreateEditCardStyled = styled.div`
     height: 199px;
     background-color: var(--white);
     border-radius: 10px;
-    box-shadow: var(--shadow-hover-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 300ms ease-in-out, background-color 300ms ease-in-out;
   }
 
   /* .card:hover {
@@ -33,7 +35,9 @@ export const CreateEditCardStyled = styled.div`
     width: 205px;
     height: 199px;
     border-radius: 10px;
-    box-shadow: var(--shadow-hover-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 300ms ease-in-out, background-color 300ms ease-in-out;
+
     background-color: var(--challenge-main-bg-color);
   }
 

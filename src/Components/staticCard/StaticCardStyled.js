@@ -9,13 +9,17 @@ export const StaticCardStyled = styled.div`
     height: 260px;
     align-items: center;
     background: var(--white);
-    box-shadow: var(--card-box-shadow);
     border-radius: 10px;
     position: relative;
+    cursor: pointer;
+
+    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
+      3px 4px 4px rgba(21, 57, 90, 0.03);
+    transition: box-shadow 300ms ease-in-out;
   }
 
   .baseContainer:hover {
-    box-shadow: var(--shadow-hover-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   }
 
   .ContainerChallenge {
@@ -27,13 +31,15 @@ export const StaticCardStyled = styled.div`
     align-items: center;
     border-radius: 10px;
     position: relative;
-    /* box-shadow: var(--shadow-hover-color); */
-    box-shadow: var(--card-box-shadow);
+    cursor: pointer;
+    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
+      3px 4px 4px rgba(21, 57, 90, 0.03);
+    transition: box-shadow 300ms ease-in-out;
     background: var(--challenge-main-bg-color);
   }
 
   .ContainerChallenge:hover {
-    box-shadow: var(--shadow-hover-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   }
 
   .IconTrophy,

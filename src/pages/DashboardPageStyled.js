@@ -69,6 +69,7 @@ export const DashboardPageStyled = styled.div`
   }
 
   .btnDone {
+    z-index: 1;
     font-style: normal;
     font-weight: 300;
     font-size: 15px;
@@ -105,7 +106,7 @@ export const DashboardPageStyled = styled.div`
     fill: var(--white);
   }
 
-  .overdueContainer > ul > li > div {
+  .unusedContainer > ul > li > div {
     filter: drop-shadow(0px 0px 2px #db0837);
   }
 `;
