@@ -20,6 +20,7 @@ import {
 } from "../redux/cards/cardsSelectors";
 import { DashboardPageStyled } from "./DashboardPageStyled";
 import Header from "../Components/header/Header";
+import Wrapper from "../Components/wrapper/Wrapper";
 
 const DashboardPage = () => {
   const [doneIsShown, setDoneIsShown] = useState(false);
@@ -64,32 +65,34 @@ const DashboardPage = () => {
   return (
     <>
       <Header />
-      <DashboardPageStyled>
-        {isLoading && (
-          <ModalLoader>
-            <Loaders size={100} />
-          </ModalLoader>
-        )}
-        <TodaySection cards={todayCards} />
-        <SectionMainPage
-          title="TOMORROW"
-          cardList={getSorted(activeTomorrowCards)}
-        />
-        <section className="sectionDone">
-          <div className="lineWrapper">
-            <button className="btnDone" onClick={onShowDone}>
-              DONE
-              <Icon
-                className="IconDone"
-                name={doneIsShown ? "triangle-down" : "triangle-up"}
-                size={12}
-              />
-            </button>
-          </div>
+      <Wrapper>
+        <DashboardPageStyled>
+          {isLoading && (
+            <ModalLoader>
+              <Loaders size={100} />
+            </ModalLoader>
+          )}
+          <TodaySection cards={todayCards} />
+          <SectionMainPage
+            title="TOMORROW"
+            cardList={getSorted(activeTomorrowCards)}
+          />
+          <section className="sectionDone">
+            <div className="lineWrapper">
+              <button className="btnDone" onClick={onShowDone}>
+                DONE
+                <Icon
+                  className="IconDone"
+                  name={doneIsShown ? "triangle-down" : "triangle-up"}
+                  size={12}
+                />
+              </button>
+            </div>
 
-          {doneIsShown && <CardList cards={doneCards} />}
-        </section>
-      </DashboardPageStyled>
+            {doneIsShown && <CardList cards={doneCards} />}
+          </section>
+        </DashboardPageStyled>
+      </Wrapper>
     </>
   );
 };

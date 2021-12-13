@@ -43,7 +43,7 @@ export const DashboardPageStyled = styled.div`
 
     .buttonAddContainer {
       bottom: 40px;
-      right: calc((100% - 1280px) / 2);
+      right: calc((100% - 1220px) / 2);
     }
   }
 
