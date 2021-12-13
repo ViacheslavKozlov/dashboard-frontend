@@ -15,7 +15,7 @@ const Card = ({
 }) => {
   const [editFormShow, setEditFormShow] = useState(false);
   const [isDeleteModalShown, setIsDeleteModalShown] = useState(false);
-  const [completedStatus, setCompleted] = useState(completed);
+  const [completedStatus, setCompleted] = useState(false);
 
   const onStaticCardClick = (e) => {
     if (e.target.id === "Star" || e.target.id === "trophy") {

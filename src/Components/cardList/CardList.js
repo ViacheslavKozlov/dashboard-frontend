@@ -1,8 +1,6 @@
-// import { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-// import ReactPaginate from "react-paginate";
 import Card from "../card/Card";
-import InfoCard from "../infoCard/InfoCard";
 import CreateEditCard from "../createEditCard/CreateEditCard";
 import { CardListStyled } from "./CardListStyled";
 
@@ -22,7 +20,10 @@ const CardList = ({
         )}
 
         {isInfoCardShown && (
-          <InfoCard title="To add a new card, click the button in the lower right corner" />
+          <li className="cardListItem">
+            <CreateEditCard handleHideCard={onCloseForm} />
+          </li>
+          // <InfoCard title="To add a new card, click the button in the lower right corner" />
         )}
 
         {cards.map(
@@ -43,7 +44,7 @@ const CardList = ({
                 category={category}
                 taskDate={taskDate}
                 taskName={taskName}
-                isCompleted={completed}
+                completed={completed}
               />
             </li>
           )

@@ -3,8 +3,7 @@ export const toDoSelector = (state) => state.cards.items;
 export const getAllActiveCardsSelector = (state) =>
   state.cards.items.filter(
     ({ completed, taskDate }) =>
-      !completed &&
-      new Date().toLocaleDateString() <= new Date(taskDate).toLocaleDateString()
+      !completed && new Date().getTime() <= new Date(taskDate).getTime()
   );
 
 export const getActiveTodayCardsSelector = (state) =>
@@ -36,9 +35,13 @@ export const getChallengeCardsSelector = (state) =>
     ({ isChallenge, completed, taskDate }) =>
       isChallenge &&
       !completed &&
-      new Date().toLocaleDateString() <=
-        new Date(taskDate).toLocaleDateString() &&
-      new Date().getTime() < new Date(taskDate).getTime()
+      new Date().getTime() <= new Date(taskDate).getTime()
   );
+
+export const getUnusedCards = (state) => {
+  return state.cards.items.filter(({ completed, taskDate }) => {
+    return !completed && new Date().getTime() > new Date(taskDate).getTime();
+  });
+};
 
 export const getIsLoadingSelector = (state) => state.cards.isLoading;
