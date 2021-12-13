@@ -19,6 +19,7 @@ const RegPage = lazy(
 
 const MainRoutes = () => {
   const isLoggedIn = useSelector(isAuthSelector);
+  console.log(isLoggedIn);
 
   return (
     <>

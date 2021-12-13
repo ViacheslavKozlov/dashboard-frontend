@@ -3,7 +3,7 @@ import React from "react";
 import { lazy, Suspense } from "react";
 import { Switch } from "react-router";
 import PublicRoute from "../routes/PuplicRoute";
-// import PrivateRoute from "../routes/PrivateRoute";
+import PrivateRoute from "../routes/PrivateRoute";
 import { useSelector } from "react-redux";
 import { isAuthSelector } from "../redux/auth/authSelectors.js";
 import { Redirect } from "react-router-dom";
@@ -25,6 +25,7 @@ const RegPage = lazy(
 
 function App() {
   const isLoggedIn = useSelector(isAuthSelector);
+  console.log(isLoggedIn)
   return (
     <>
       <Switch>
@@ -35,10 +36,10 @@ function App() {
           <PublicRoute path="/register" redirectTo="/dashboard">
             <RegPage />
           </PublicRoute>
-          <PublicRoute path="/dashboard" redirectTo="/">
+          <PrivateRoute path="/dashboard" redirectTo="/">
             <DashboardPage />
-          </PublicRoute>
-          {/* {isLoggedIn ? <Redirect to="/dashboard" /> : <Redirect to="/" />} */}
+          </PrivateRoute>
+          {isLoggedIn ? <Redirect to="/dashboard" /> : <Redirect to="/" />}
         </Suspense>
       </Switch>
     </>
