@@ -95,7 +95,6 @@ export const AuthFormContainer = styled.div`
     .authDicsription {
       width: 375px;
       height: 99px;
-
       font-size: 24 px;
       line-height: 1.38;
       padding-top: 52px;
@@ -177,7 +176,7 @@ export const AuthBgContainer = styled.div`
   background-image: url(${imgMob});
   background-repeat: no-repeat;
   background-position-y: bottom;
-  height: 100vh;
+  height: auto;
 
   @media ${device.tablet} {
     background-image: url(${imgTab});
@@ -186,6 +185,8 @@ export const AuthBgContainer = styled.div`
   }
   @media ${device.desc} {
     background-image: url(${imgDesc});
+    background-size: auto 100%;
+    background-position-x: right;
   }
 `;
 

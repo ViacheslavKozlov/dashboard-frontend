@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import { Button } from "../../button/Button";
 import {
   AuthBgContainer,
-  AuthContainer,
   AuthDiscrContainer,
   AuthFormContainer,
 } from "./AuthFormStyled";
