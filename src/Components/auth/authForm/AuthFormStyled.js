@@ -177,7 +177,7 @@ export const AuthBgContainer = styled.div`
   background-image: url(${imgMob});
   background-repeat: no-repeat;
   background-position-y: bottom;
-  height: auto;
+  height: 100vh;
 
   @media ${device.tablet} {
     background-image: url(${imgTab});
