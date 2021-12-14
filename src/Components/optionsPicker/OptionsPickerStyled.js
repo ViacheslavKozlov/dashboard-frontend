@@ -17,8 +17,8 @@ export const OptionsPickerStyled = styled.div`
 
   .category_button:hover,
   .category_button:focus {
-    box-shadow: 1px -3px 4px 1px rgb(0 215 255 / 22%),
-      1px 3px 4px 1px rgb(0 215 255 / 22%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 300ms ease-in-out;
   }
 
   .difficulty_buttonLabel_challenge {
@@ -68,6 +68,7 @@ export const OptionsPickerStyled = styled.div`
     text-transform: uppercase;
     font-size: 14px;
     line-height: 14px;
+    transition: box-shadow 300ms ease-in-out;
   }
   .category_buttonLabel {
     margin-right: 3px;

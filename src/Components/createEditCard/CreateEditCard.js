@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
-// import styles from "./CreateEditCard.module.css";
+import moment from "moment";
 import DeleteModal from "../deleteModal/DeleteModal";
 import CompletedCard from "../completedCard/CompletedCard";
 import DateTimePicker from "../dateTimePicker/DateTimePicker";
@@ -63,19 +63,11 @@ const CreateEditCard = ({
     setIsChallenge((prevState) => !prevState);
   };
 
-  // const handleCardCompletedStatus = () => {
-  //   setCompleted(true);
-  // };
-
-  // const onCompletingModalClosed = () => {
-  //   setCompleted(false);
-  // };
-
   const onClickCreateCard = () =>
     dispatch(
       addNewCardOperation({
         taskName,
-        taskDate,
+        taskDate: moment(taskDate).format("YYYY-MM-DD HH:mm"),
         difficulty,
         category,
         isChallenge,
@@ -101,7 +93,7 @@ const CreateEditCard = ({
         completed,
         category,
         difficulty,
-        taskDate: date,
+        taskDate: moment(date).format("YYYY-MM-DD HH:mm"),
       })
     );
 
