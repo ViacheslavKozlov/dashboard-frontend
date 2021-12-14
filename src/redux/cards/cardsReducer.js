@@ -55,18 +55,18 @@ const cardsLoadingReducer = createReducer(false, {
   [editCardError]: () => false,
 });
 
-const cardsErrorReducer = createReducer("", {
+const cardsErrorReducer = createReducer(null, {
   [getCardsError]: (_, action) => action.payload,
   [addNewCardError]: (_, action) => action.payload,
   [removeCardError]: (_, action) => action.payload,
   [editCardError]: (_, action) => action.payload,
   [getDoneCardsError]: (_, action) => action.payload,
-  [getCardsRequest]: () => "",
-  [addNewCardRequest]: () => "",
-  [removeCardRequest]: () => "",
-  [editCardRequest]: () => "",
-  [getDoneCardsRequest]: () => "",
-  [logoutAuthSuccess]: () => "",
+  [getCardsRequest]: () => null,
+  [addNewCardRequest]: () => null,
+  [removeCardRequest]: () => null,
+  [editCardRequest]: () => null,
+  [getDoneCardsRequest]: () => null,
+  [logoutAuthSuccess]: () => null,
 });
 
 export const cardsReducer = combineReducers({

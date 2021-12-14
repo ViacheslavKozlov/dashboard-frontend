@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+// import MainRoutes from "../routes/MainRoutes.js";
 import { lazy, Suspense } from "react";
 import { Switch } from "react-router";
 import PublicRoute from "../routes/PuplicRoute";
@@ -6,6 +7,9 @@ import PrivateRoute from "../routes/PrivateRoute";
 import { useSelector } from "react-redux";
 import { isAuthSelector } from "../redux/auth/authSelectors.js";
 import { Redirect } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import { getErrorCardsSelector } from "../redux/cards/cardsSelectors";
+import "react-toastify/dist/ReactToastify.css";
 
 const DashboardPage = lazy(
   () =>
@@ -20,6 +24,13 @@ const RegPage = lazy(
 
 function App() {
   const isLoggedIn = useSelector(isAuthSelector);
+
+  const error = useSelector(getErrorCardsSelector);
+
+  useEffect(() => {
+    toast.error(error);
+  }, [error]);
+
   return (
     <>
       <Switch>
@@ -36,6 +47,7 @@ function App() {
           {isLoggedIn ? <Redirect to="/dashboard" /> : <Redirect to="/" />}
         </Suspense>
       </Switch>
+      <ToastContainer theme="colored" />
     </>
   );
 }

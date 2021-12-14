@@ -1,8 +1,5 @@
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
-import { CSSTransition } from "react-transition-group";
-
-import "./PickerPopupAnimation.css";
 import { PickerPopupStyled } from "./PickerPopupStyled";
 
 const PickerPopup = ({ children, onClose }) => {
@@ -27,15 +24,7 @@ const PickerPopup = ({ children, onClose }) => {
   return (
     <PickerPopupStyled>
       <div className="backdrop" onClick={handleBackdropClick}></div>
-      <CSSTransition
-        in={true}
-        appear={true}
-        timeout={250}
-        classNames="content"
-        unmountOnExit
-      >
-        {children}
-      </CSSTransition>
+      {children}
     </PickerPopupStyled>
   );
 };

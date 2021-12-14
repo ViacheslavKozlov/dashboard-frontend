@@ -7,7 +7,6 @@ export const OptionsPickerStyled = styled.div`
     width: 120px;
     height: 16px;
     padding: 0 2px 0 21px;
-    /* border-radius: 0px 25px 25px 0px; */
     cursor: pointer;
     font-size: 16px;
     line-height: 16px;

@@ -1,6 +1,26 @@
 import styled from "styled-components";
 
 export const CustomRadioListStyled = styled.div`
+  .fade-appear {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  .fade-appear-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 300ms ease-in-out, opacity 300ms;
+  }
+  .fade-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .fade-active-exit {
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 300ms ease-in-out, opacity 300ms;
+  }
+
   ul {
     margin: 0;
     padding: 0;
@@ -11,7 +31,6 @@ export const CustomRadioListStyled = styled.div`
     padding: 0;
   }
 
-  /*Difficulty styles*/
   .difficulty_container {
     display: flex;
     flex-grow: 0;
@@ -82,7 +101,6 @@ export const CustomRadioListStyled = styled.div`
     height: 8px;
     opacity: 0;
     border-radius: 50%;
-    /* border: 2px dashed; */
   }
 
   .difficulty_radio:checked ~ .difficulty_text {
@@ -167,7 +185,6 @@ export const CustomRadioListStyled = styled.div`
     opacity: 1;
   }
 
-  /*Category styles*/
   .category_container {
     position: absolute;
     top: 55%;
