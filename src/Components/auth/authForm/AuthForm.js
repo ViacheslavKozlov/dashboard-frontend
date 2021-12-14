@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { Button } from "../../button/Button";
 import {
   AuthBgContainer,
@@ -7,13 +7,19 @@ import {
   AuthDiscrContainer,
   AuthFormContainer,
 } from "./AuthFormStyled";
+import { useSelector } from "react-redux";
+import { regSuccessSelector } from "../../../redux/auth/authSelectors";
 // import sprite from "../../../icons/icons.svg";
 
 const AuthForm = ({ signUp, logIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
+
   const location = useLocation();
+  const history = useHistory();
+
+  const regSuccess = useSelector(regSuccessSelector);
 
   const onHandleChange = (e) => {
     const { name, value } = e.target;
@@ -41,15 +47,20 @@ const AuthForm = ({ signUp, logIn }) => {
           <p className="authChooseText">
             Choose your name to Log in or
             {location.pathname === "/register" ? (
-              <a href="/login">SIGN IN</a>
+              <a href="/">SIGN IN</a>
             ) : (
               <a href="/register">SIGN UP</a>
             )}
             {/*<a href="/register">SIGN UP</a>*/}
           </p>
         </AuthDiscrContainer>
-        <form onSubmit={onHandleSubmit} className="authForm">
-          {location.pathname === "/register" && (
+        <form
+          action="/"
+          target="_self"
+          onSubmit={onHandleSubmit}
+          className="authForm"
+        >
+          {location.pathname === "/register" && !regSuccess && (
             <label className="inputName">
               <input
                 type="text"
@@ -88,10 +99,15 @@ const AuthForm = ({ signUp, logIn }) => {
             />
           </label>
           <div className="button_wrapper">
-            <Button text="go!" style="go" />
+            <Button
+              text="go!"
+              style="go"
+              onClick={() => {
+                // let path = `/`;
+                history.push("/");
+              }}
+            />
           </div>
-          {/* // onClick={onMobileSubmit}
-        /> */}
         </form>
       </AuthFormContainer>
     </AuthBgContainer>
