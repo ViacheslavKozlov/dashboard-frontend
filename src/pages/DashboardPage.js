@@ -72,34 +72,32 @@ const DashboardPage = () => {
               <Loaders size={100} />
             </ModalLoader>
           )}
-          <div className="container">
-            <TodaySection cards={todayCards} />
-            <SectionMainPage
-              title="TOMORROW"
-              cardList={getSorted(activeTomorrowCards)}
-            />
+          <TodaySection cards={todayCards} />
+          <SectionMainPage
+            title="TOMORROW"
+            cardList={getSorted(activeTomorrowCards)}
+          />
 
-            <SectionMainPage
-              // className="unusedContainer"
-              title="TIME IS OVER"
-              cardList={getSorted(unusedCards)}
-            />
+          <SectionMainPage
+            // className="unusedContainer"
+            title="TIME IS OVER"
+            cardList={getSorted(unusedCards)}
+          />
 
-            <section className="sectionDone">
-              <div className="lineWrapper">
-                <button className="btnDone" onClick={onShowDone}>
-                  DONE
-                  <Icon
-                    className="IconDone"
-                    name={doneIsShown ? "triangle-down" : "triangle-up"}
-                    size={12}
-                  />
-                </button>
-              </div>
+          <section className="sectionDone">
+            <div className="lineWrapper">
+              <button className="btnDone" onClick={onShowDone}>
+                DONE
+                <Icon
+                  className="IconDone"
+                  name={doneIsShown ? "triangle-down" : "triangle-up"}
+                  size={12}
+                />
+              </button>
+            </div>
 
-              {doneIsShown && <CardList cards={doneCards} />}
-            </section>
-          </div>
+            {doneIsShown && <CardList cards={doneCards} />}
+          </section>
         </DashboardPageStyled>
       </Wrapper>
     </>

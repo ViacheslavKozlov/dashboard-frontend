@@ -26,14 +26,13 @@ let config = {
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI3MDRlOTczZDJjNzZiMjY0YWI0NmYiLCJpYXQiOjE2MzkzODUxMjJ9.2avgSsGE3aL8bHHWYJKcuulHAIFcIg6JUfdS71HikXw",
   },
 };
-// axios.defaults.headers.common.Authorization = `Bearer ''`;
 
 const getActiveCardsOperation = () => async (dispatch) => {
   dispatch(getCardsRequest());
 
   try {
     const { data } = await axios.get(`${BASE_URL}/allTasks`, config);
-    const normalizeData = data.data.tasks.map((task) => ({
+    const normalizeData = data.data.map((task) => ({
       category: task.category,
       isChallenge: task.isChallenge,
       difficulty: task.difficulty,
@@ -87,12 +86,6 @@ const removeCardOperation = (taskId) => async (dispatch) => {
   } catch (error) {
     dispatch(removeCardError(error.message));
   }
-  // axios
-  //   .delete(`cards/${cardId}`)
-  //   .then(() => dispatch(removeCardSucces(cardId)))
-  //   .catch((err) =>
-  //     dispatch(removeCardError(err.response?.data?.message || err.message))
-  //   );
 };
 
 const editCardOperation = (cardId, card) => async (dispatch) => {
@@ -114,12 +107,6 @@ const editCardOperation = (cardId, card) => async (dispatch) => {
   } catch (error) {
     dispatch(editCardError(error.message));
   }
-  // axios
-  //   .put(`cards/${cardId}`, card)
-  //   .then(({ data }) => dispatch(editCardSucces(data.result)))
-  //   .catch((err) =>
-  //     dispatch(editCardError(err.response?.data?.message || err.message))
-  //   );
 };
 
 export {

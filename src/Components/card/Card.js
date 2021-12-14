@@ -1,8 +1,9 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-
+import { CSSTransition } from "react-transition-group";
 import StaticCard from "../staticCard/StaticCard";
 import CreateEditCard from "../createEditCard/CreateEditCard";
+import "./CardAnimation.css";
 
 const Card = ({
   id,
@@ -37,36 +38,48 @@ const Card = ({
     setCompleted(false);
   };
 
-  return editFormShow ? (
-    <CreateEditCard
-      cardId={id}
-      isChallengeProp={isChallenge}
-      completed={completedStatus}
-      textProp={taskName}
-      difficultyProp={difficulty}
-      categoryProp={category}
-      deadlineProp={taskDate}
-      handleHideCard={() => setEditFormShow(false)}
-      handleCardCompletedStatus={handleCardCompletedStatus}
-      onCompletingModalClosed={onCompletingModalClosed}
-    />
-  ) : (
-    <div onClick={onStaticCardClick}>
-      <StaticCard
-        cardId={id}
-        isChallenge={isChallenge}
-        difficulty={difficulty}
-        category={category}
-        taskDate={taskDate}
-        taskName={taskName}
-        completed={completedStatus}
-        isDeleteModalShown={isDeleteModalShown}
-        onCancelDelete={() => setIsDeleteModalShown(false)}
-        handleHideCard={() => setEditFormShow(false)}
-        handleCardCompletedStatus={handleCardCompletedStatus}
-        onCompletingModalClosed={onCompletingModalClosed}
-      />
-    </div>
+  return (
+    <>
+      <CSSTransition
+        in={true}
+        appear={true}
+        timeout={250}
+        classNames="fade"
+        unmountOnExit
+      >
+        {editFormShow ? (
+          <CreateEditCard
+            cardId={id}
+            isChallengeProp={isChallenge}
+            completed={completedStatus}
+            textProp={taskName}
+            difficultyProp={difficulty}
+            categoryProp={category}
+            deadlineProp={taskDate}
+            handleHideCard={() => setEditFormShow(false)}
+            handleCardCompletedStatus={handleCardCompletedStatus}
+            onCompletingModalClosed={onCompletingModalClosed}
+          />
+        ) : (
+          <div onClick={onStaticCardClick}>
+            <StaticCard
+              cardId={id}
+              isChallenge={isChallenge}
+              difficulty={difficulty}
+              category={category}
+              taskDate={taskDate}
+              taskName={taskName}
+              completed={completedStatus}
+              isDeleteModalShown={isDeleteModalShown}
+              onCancelDelete={() => setIsDeleteModalShown(false)}
+              handleHideCard={() => setEditFormShow(false)}
+              handleCardCompletedStatus={handleCardCompletedStatus}
+              onCompletingModalClosed={onCompletingModalClosed}
+            />
+          </div>
+        )}
+      </CSSTransition>
+    </>
   );
 };
 

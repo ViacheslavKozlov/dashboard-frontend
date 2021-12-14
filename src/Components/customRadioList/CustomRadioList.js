@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { CustomRadioListStyled } from "./CustomRadioListStyled";
+import { CSSTransition } from "react-transition-group";
 
 const CustomRadioList = ({
   isChallenge,
@@ -18,32 +19,40 @@ const CustomRadioList = ({
 
   return (
     <CustomRadioListStyled>
-      <ul className={containerStyle}>
-        {options.map((option) => (
-          <li key={option}>
-            <label className={`${type}_label`}>
-              <input
-                type="radio"
-                checked={value === option}
-                name={type}
-                value={option}
-                onChange={handleOptionsChange}
-                className={radioStyle}
-              />
-              {isDifficultyType ? (
-                <>
-                  <span className="radio_outline"></span>
-                  <span className={[`${type}_text`, `${option}`].join(" ")}>
-                    {option}
-                  </span>
-                </>
-              ) : (
-                <span className={`${type}_text`}>{option}</span>
-              )}
-            </label>
-          </li>
-        ))}
-      </ul>
+      <CSSTransition
+        in={true}
+        appear={true}
+        timeout={250}
+        classNames="fade"
+        // unmountOnExit
+      >
+        <ul className={containerStyle}>
+          {options.map((option) => (
+            <li key={option}>
+              <label className={`${type}_label`}>
+                <input
+                  type="radio"
+                  checked={value === option}
+                  name={type}
+                  value={option}
+                  onChange={handleOptionsChange}
+                  className={radioStyle}
+                />
+                {isDifficultyType ? (
+                  <>
+                    <span className="radio_outline"></span>
+                    <span className={[`${type}_text`, `${option}`].join(" ")}>
+                      {option}
+                    </span>
+                  </>
+                ) : (
+                  <span className={`${type}_text`}>{option}</span>
+                )}
+              </label>
+            </li>
+          ))}
+        </ul>
+      </CSSTransition>
     </CustomRadioListStyled>
   );
 };

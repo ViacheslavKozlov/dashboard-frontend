@@ -17,4 +17,20 @@ export const ModalLoaderStyled = styled.div`
     max-width: calc(70vw - 48px);
     max-height: calc(110vh - 24px);
   }
+
+  .fade-appear {
+    opacity: 0;
+  }
+
+  .fade-appear-active {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+  .fade-exit {
+    opacity: 1;
+  }
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
 `;
