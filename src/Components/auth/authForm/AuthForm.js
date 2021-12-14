@@ -40,7 +40,12 @@ const AuthForm = ({ signUp, logIn }) => {
           </p>
           <p className="authChooseText">
             Choose your name to Log in or
-            <a href="/register">SIGN UP</a>
+            {location.pathname === "/register" ? (
+              <a href="/login">SIGN IN</a>
+            ) : (
+              <a href="/register">SIGN UP</a>
+            )}
+            {/*<a href="/register">SIGN UP</a>*/}
           </p>
         </AuthDiscrContainer>
         <form onSubmit={onHandleSubmit} className="authForm">
