@@ -8,21 +8,23 @@ import useDeviceSizes from "../../hooks/useDeviceSizes";
 
 const UserMenu = () => {
   const dispatch = useDispatch();
-  //   const { name } = useSelector(userSelector);
+  const userName = useSelector(userSelector);
   const { isMobileDevice } = useDeviceSizes();
-  const name = "vlad";
+  console.log(userName);
+  // const userName = "MX";
   const logout = () => {
     dispatch(logoutOperation());
+    console.log("logout");
   };
   return (
     <UserMenuWrapper>
-      <p className="user-logo">{name.charAt(0).toUpperCase()}</p>
+      <p className="user-logo">{userName.charAt(0).toUpperCase()}</p>
       {!isMobileDevice && (
         <p className="user-name">
-          {name.charAt(0).toUpperCase() + name.substr(1)}'s Quest Log
+          {userName.charAt(0).toUpperCase() + userName.substr(1)}'s Quest Log
         </p>
       )}
-      <button className="user-logout" type="button" onClick={logout}>
+      <button className="user-logout" type="submit" onClick={logout}>
         <svg className="user-logout-logo">
           <use href={icons + "#icon-logout"} />
         </svg>

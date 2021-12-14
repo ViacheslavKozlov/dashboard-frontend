@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const HeaderContainer = styled.header`
   background-color: var(--header-bg-color);
   box-shadow: 0px 4px 4px rgba(36, 42, 55, 0.1);
+  z-index: 1;
+  position: relative;
 
   .container {
     max-width: 1280px;

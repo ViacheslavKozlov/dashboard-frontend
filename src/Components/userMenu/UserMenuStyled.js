@@ -5,6 +5,7 @@ export const UserMenuWrapper = styled.div`
   align-items: center;
   justify-content: flex-end;
   width: calc(50% + 80px);
+
   .user-logo {
     display: flex;
     align-items: center;
@@ -31,6 +32,7 @@ export const UserMenuWrapper = styled.div`
     color: var(--header-text-color);
     margin-right: calc(100% - 210px);
   }
+
   .user-logout {
     border: none;
     outline: none;
@@ -38,10 +40,17 @@ export const UserMenuWrapper = styled.div`
     box-shadow: none;
     cursor: pointer;
   }
+
   .user-logout-logo {
     width: 22px;
     height: 16px;
     fill: var(--header-symb-color);
+    transition: transform 500ms ease-in, fill 500ms ease-in;
+  }
+
+  .user-logout-logo:hover use {
+    fill: var(--accent-color);
+    transform: scale(1.1);
   }
 `;
 // &:hover {
