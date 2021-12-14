@@ -40,8 +40,8 @@ const loginOperation = (user) => async (dispatch) => {
   dispatch(loginAuthRequest());
   try {
     const { data } = await axios.post(`${BASE_URL}/users/login`, user);
-    token.set(data.token);
-    dispatch(loginAuthSuccess(data));
+    token.set(data.data.token);
+    dispatch(loginAuthSuccess(data.data));
   } catch (error) {
     dispatch(loginAuthError(error.message));
   }
