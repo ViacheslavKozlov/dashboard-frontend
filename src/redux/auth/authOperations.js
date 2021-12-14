@@ -11,9 +11,7 @@ import {
   logoutAuthError,
 } from "./authActions";
 
-// const BASE_URL = "https://connections-api.herokuapp.com";
-const BASE_URL = "https://afternoon-garden-29997.herokuapp.com/";
-// const BASE_URL = "https://localhost:3030/api/";
+const BASE_URL = "https://afternoon-garden-29997.herokuapp.com/api";
 // const BASE_URL = "http://127.0.0.1:3030/api";
 
 const token = {
