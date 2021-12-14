@@ -16,15 +16,28 @@ const authUserReducer = createReducer(null, {
     userName: payload.user.name,
     email: payload.user.email,
   }),
+
+  // [registerAuthSuccess]: (_, { payload }) => payload,
+
+  [registerAuthSuccess]: (_, { payload }) => ({
+    userName: payload.user.displayName,
+    email: payload.user.email,
+  }),
+
+  // [loginAuthSuccess]: (_, { payload }) => payload,
+
   [loginAuthSuccess]: (_, { payload }) => ({
     userName: payload.user.name,
     email: payload.user.email,
   }),
+
+  // [loginAuthSuccess]: (_, { payload }) => payload,
+
   [logoutAuthSuccess]: () => null,
 });
 
 const authTokenReducer = createReducer(null, {
-  [registerAuthSuccess]: (_, { payload }) => payload.token,
+  // [registerAuthSuccess]: (_, { payload }) => payload.token,
   [loginAuthSuccess]: (_, { payload }) => payload.token,
   [logoutAuthSuccess]: () => null,
 });

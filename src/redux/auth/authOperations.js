@@ -12,6 +12,7 @@ import {
 } from "./authActions";
 
 // const BASE_URL = "https://connections-api.herokuapp.com";
+// const BASE_URL = "https://localhost:3030/api/";
 const BASE_URL = "http://127.0.0.1:3030/api";
 
 const token = {
@@ -25,11 +26,14 @@ const token = {
 
 const registerOperation = (user) => async (dispatch) => {
   dispatch(registerAuthRequest());
+  console.log(user);
 
   try {
     const { data } = await axios.post(`${BASE_URL}/users/signup`, user);
+    console.log(user);
     token.set(data.token);
     dispatch(registerAuthSuccess(data));
+    console.log(data);
   } catch (error) {
     console.log(error.message);
     dispatch(registerAuthError(error.message));

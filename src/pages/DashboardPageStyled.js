@@ -48,10 +48,37 @@ export const DashboardPageStyled = styled.div`
   }
 
   .section {
+    width: 290px;
+    margin: 0 auto;
     padding-top: 30px;
   }
   .sectionDone {
-    margin-top: 60px;
+    width: 290px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  @media screen and (min-width: 768px) {
+    .section {
+      width: 670px;
+      margin: 0 auto;
+    }
+    .sectionDone {
+      width: 670px;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .section {
+      width: 1137px;
+      margin: 0 auto;
+      padding-top: 30px;
+    }
+    .sectionDone {
+      width: 1137px;
+      margin: 0 auto;
+      margin-top: 60px;
+    }
   }
 
   .sectionTitle {

@@ -25,16 +25,18 @@ const MainRoutes = () => {
     <>
       <Switch>
         <Suspense fallback="">
-          <PublicRoute exact path="/">
+          <PublicRoute exact restricted path="/">
             <LoginPage />
           </PublicRoute>
-          <PublicRoute path="/register" restricted redirectTo="/">
+          <PublicRoute exact path="/register" restricted redirectTo="/">
+            {/* {!isLoggedIn ? <RegPage /> : <Redirect to="/" />} */}
             <RegPage />
           </PublicRoute>
-          <PrivateRoute path="/dashboard" restricted redirectTo="/">
+          <PrivateRoute exact path="/dashboard" restricted redirectTo="/">
             <DashboardPage />
           </PrivateRoute>
           {isLoggedIn ? <Redirect to="/dashboard" /> : <Redirect to="/" />}
+          {/*<Redirect to="/" />*/}
         </Suspense>
       </Switch>
     </>

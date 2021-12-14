@@ -44,4 +44,6 @@ export const getUnusedCards = (state) => {
   });
 };
 
+export const getErrorCardsSelector = (state) => state.cards.error;
+
 export const getIsLoadingSelector = (state) => state.cards.isLoading;
