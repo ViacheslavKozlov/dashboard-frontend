@@ -33,7 +33,8 @@ const ButtonAdd = ({ type, onClick }) => {
 
 const Button = ({ toggle, text, style }) => {
   return (
-    <button type="button" onClick={toggle} className={s[style]}>
+    // <button type="button" onClick={toggle} className={s[style]}>
+    <button type="submit" onClick={toggle} className={s[style]}>
       {text}
     </button>
   );
