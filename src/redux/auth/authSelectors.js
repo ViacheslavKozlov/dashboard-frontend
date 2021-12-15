@@ -1,4 +1,6 @@
 export const authSelector = (state) => state.auth;
+export const regSuccessSelector = (state) => state.auth.user;
+// export const regSuccessSelector = (state) => state.auth.user.iSRegistration;
 
 export const userSelector = (state) => state.auth.user;
 // export const errorSelector = (state) => state.auth.error;

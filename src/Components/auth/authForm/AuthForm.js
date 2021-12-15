@@ -1,18 +1,24 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { Button } from "../../button/Button";
 import {
   AuthBgContainer,
   AuthDiscrContainer,
   AuthFormContainer,
 } from "./AuthFormStyled";
+import { useSelector } from "react-redux";
+import { regSuccessSelector } from "../../../redux/auth/authSelectors";
 // import sprite from "../../../icons/icons.svg";
 
 const AuthForm = ({ signUp, logIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
+
   const location = useLocation();
+  const history = useHistory();
+
+  const regSuccess = useSelector(regSuccessSelector);
 
   const onHandleChange = (e) => {
     const { name, value } = e.target;
@@ -38,17 +44,41 @@ const AuthForm = ({ signUp, logIn }) => {
             quests and exciting challenges.
           </p>
           <p className="authChooseText">
-            Choose your name to Log in or
+            {/* Choose&ensp; */}
             {location.pathname === "/register" ? (
-              <a href="/login">SIGN IN</a>
+              <a href="/">
+                <b>Log IN</b>
+              </a>
+            ) : (
+              <b>Log IN</b>
+            )}
+            &ensp;or&ensp;
+            {location.pathname === "/register" ? (
+              <b>SIGN IN</b>
+            ) : (
+              <a href="/register">
+                <b>SIGN UP</b>
+              </a>
+            )}
+            &ensp;for new users
+          </p>
+          {/* <p className="authChooseText">
+            Choose Log IN or&ensp;
+            {location.pathname === "/register" ? (
+              <a href="/">SIGN IN</a>
             ) : (
               <a href="/register">SIGN UP</a>
             )}
-            {/*<a href="/register">SIGN UP</a>*/}
-          </p>
+            &ensp;for new users
+          </p> */}
         </AuthDiscrContainer>
-        <form onSubmit={onHandleSubmit} className="authForm">
-          {location.pathname === "/register" && (
+        <form
+          action="/"
+          target="_self"
+          onSubmit={onHandleSubmit}
+          className="authForm"
+        >
+          {location.pathname === "/register" && !regSuccess && (
             <label className="inputName">
               <input
                 type="text"
@@ -86,10 +116,15 @@ const AuthForm = ({ signUp, logIn }) => {
             />
           </label>
           <div className="button_wrapper">
-            <Button text="go!" style="go" />
+            <Button
+              text="go!"
+              style="go"
+              onClick={() => {
+                // let path = `/`;
+                history.push("/");
+              }}
+            />
           </div>
-          {/* // onClick={onMobileSubmit}
-        /> */}
         </form>
       </AuthFormContainer>
     </AuthBgContainer>
