@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import s from "./Modal.module.scss";
-// import React from 'react'
 
 const modalRoot = document.querySelector("#modal-root");
 
@@ -17,12 +16,12 @@ const Modal = ({ toggle, children }) => {
       body.style.overflow = "auto";
     };
   });
-  const handleKeyDown = (event) => {
+  const handleKeyDown = event => {
     if (event.code === "Escape") {
       toggle();
     }
   };
-  const backdropClick = (event) => {
+  const backdropClick = event => {
     if (event.currentTarget === event.target) {
       toggle();
     }

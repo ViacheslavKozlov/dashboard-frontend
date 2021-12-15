@@ -17,15 +17,8 @@ import {
   removeCardSucces,
 } from "./cardsActions";
 
-const BASE_URL = "http://localhost:3030/api/tasks";
-// const BASE_URL = "https://afternoon-garden-29997.herokuapp.com/api/tasks";
-// let config = {
-//   headers: {
-//     Authorization:
-//       "Bearer " +
-//       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI3MDRlOTczZDJjNzZiMjY0YWI0NmYiLCJpYXQiOjE2MzkzODUxMjJ9.2avgSsGE3aL8bHHWYJKcuulHAIFcIg6JUfdS71HikXw",
-//   },
-// };
+// const BASE_URL = "http://localhost:3030/api/tasks";
+const BASE_URL = "https://afternoon-garden-29997.herokuapp.com/api/tasks";
 
 const getActiveCardsOperation = () => async (dispatch) => {
   dispatch(getCardsRequest());

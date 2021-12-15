@@ -4,12 +4,7 @@ import Card from "../card/Card";
 import CreateEditCard from "../createEditCard/CreateEditCard";
 import { CardListStyled } from "./CardListStyled";
 
-const CardList = ({
-  isCreateFormShown = false,
-  onCloseForm = null,
-  cards,
-  isInfoCardShown = false,
-}) => {
+const CardList = ({ isCreateFormShown = false, onCloseForm = null, cards, isInfoCardShown = false }) => {
   return (
     <>
       <CardListStyled>
@@ -23,32 +18,21 @@ const CardList = ({
           <li className="cardListItem">
             <CreateEditCard handleHideCard={onCloseForm} />
           </li>
-          // <InfoCard title="To add a new card, click the button in the lower right corner" />
         )}
 
-        {cards.map(
-          ({
-            id,
-            isChallenge,
-            difficulty,
-            category,
-            taskDate,
-            taskName,
-            completed,
-          }) => (
-            <li className="cardListItem" key={id}>
-              <Card
-                id={id}
-                isChallenge={isChallenge}
-                difficulty={difficulty}
-                category={category}
-                taskDate={taskDate}
-                taskName={taskName}
-                completed={completed}
-              />
-            </li>
-          )
-        )}
+        {cards.map(({ id, isChallenge, difficulty, category, taskDate, taskName, completed }) => (
+          <li className="cardListItem" key={id}>
+            <Card
+              id={id}
+              isChallenge={isChallenge}
+              difficulty={difficulty}
+              category={category}
+              taskDate={taskDate}
+              taskName={taskName}
+              completed={completed}
+            />
+          </li>
+        ))}
       </CardListStyled>
     </>
   );
@@ -62,9 +46,9 @@ CardList.propTypes = {
       difficulty: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
       taskDate: PropTypes.string.isRequired,
-      taskName: PropTypes.string.isRequired,
+      taskName: PropTypes.string.isRequired
     })
-  ),
+  )
 };
 
 export default CardList;

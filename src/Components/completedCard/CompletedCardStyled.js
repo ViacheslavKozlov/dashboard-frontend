@@ -9,8 +9,7 @@ export const CompletedCardStyled = styled.div`
     bottom: 0;
     right: 0;
     padding: 20px 15px 15px;
-    box-shadow: -3px -4px 4px var(rgba(21, 57, 90, 0.03)),
-      3px 4px 4px var(rgba(21, 57, 90, 0.03));
+    box-shadow: -3px -4px 4px var(rgba(21, 57, 90, 0.03)), 3px 4px 4px var(rgba(21, 57, 90, 0.03));
     border-radius: 10px;
     text-align: center;
     font-size: 12px;
@@ -32,15 +31,13 @@ export const CompletedCardStyled = styled.div`
   .questBox:focus,
   .challengeBox:hover,
   .challengeBox:focus {
-    box-shadow: -3px 0px 5px rgba(21, 57, 90, 0.4),
-      3px 5px 5px rgba(21, 57, 90, 0.4);
+    box-shadow: -3px 0px 5px rgba(21, 57, 90, 0.4), 3px 5px 5px rgba(21, 57, 90, 0.4);
   }
 
   .contentBox {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
   }
 
   .content {
@@ -172,7 +169,6 @@ export const CompletedCardStyled = styled.div`
     height: 50px;
     z-index: 11;
     fill: var(--white);
-    /* color: var(--white); */
   }
 
   .hidden {

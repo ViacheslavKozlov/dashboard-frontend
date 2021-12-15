@@ -4,7 +4,7 @@ import { WrapperStyled } from "./WrapperStyled";
 const Wrapper = ({ children }) => {
   return (
     <WrapperStyled>
-      <div className="container">{children}</div>;
+      <div className="container">{children}</div>
     </WrapperStyled>
   );
 };

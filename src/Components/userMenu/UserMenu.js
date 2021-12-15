@@ -8,10 +8,9 @@ import useDeviceSizes from "../../hooks/useDeviceSizes";
 
 const UserMenu = () => {
   const dispatch = useDispatch();
-  // const { userName } = useSelector(userSelector);
+  const { userName } = useSelector(userSelector);
   const { isMobileDevice } = useDeviceSizes();
-  // console.log(userName);
-  const userName = "MX";
+  console.log(userName);
   const logout = () => {
     dispatch(logoutOperation());
     console.log("logout");

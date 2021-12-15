@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-// import MainRoutes from "../routes/MainRoutes.js";
 import { lazy, Suspense } from "react";
 import { Switch } from "react-router";
 import PublicRoute from "../routes/PuplicRoute";
@@ -16,7 +15,6 @@ const LoginPage = lazy(() => import("../pages/LoginPage.js") /*webpackChunkName:
 const RegPage = lazy(() => import("../pages/RegPage.js") /*webpackChunkName: 'RegPage' */);
 
 function App() {
-  // const isLoggedIn = useSelector(isAuthSelector);
   const regSuccess = useSelector(regSuccessSelector);
 
   const error = useSelector(getErrorCardsSelector);
@@ -41,7 +39,6 @@ function App() {
           <PrivateRoute path="/dashboard" redirectTo="/">
             <DashboardPage />
           </PrivateRoute>
-          {/*{isLoggedIn ? <Redirect to="/dashboard" /> : <Redirect to="/" />}*/}
         </Suspense>
       </Switch>
       <ToastContainer theme="colored" />

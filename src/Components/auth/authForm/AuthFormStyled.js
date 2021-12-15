@@ -16,10 +16,8 @@ export const AuthFormContainer = styled.div`
   }
 
   .authDicsription {
-    /* margin: 0 0 30px; */
     display: block;
     width: 290px;
-    /* height: 87px; */
     font-weight: 700;
     font-size: 18px;
     line-height: 1.61;
@@ -80,7 +78,6 @@ export const AuthFormContainer = styled.div`
 
   .button_wrapper {
     margin-top: 23px;
-    /* margin-bottom: 181px; */
     text-align: center;
   }
 
@@ -94,7 +91,6 @@ export const AuthFormContainer = styled.div`
     }
     .authDicsription {
       width: 375px;
-      /* height: 99px; */
 
       font-size: 24px;
       line-height: 1.38;
@@ -138,7 +134,6 @@ export const AuthFormContainer = styled.div`
     }
     .authDicsription {
       width: 562px;
-      /* height: 135px; */
 
       font-size: 36px;
       line-height: 1.25;
@@ -147,7 +142,6 @@ export const AuthFormContainer = styled.div`
       color: #15395a;
     }
     .authChooseText {
-      /* width: 397px; */
       font-size: 24px;
       line-height: 1.87;
       padding-top: 35px;

@@ -3,15 +3,10 @@ import sprite from "../../icons/icons.svg";
 import styles from "./Buttot.module.css";
 
 import s from "./Button.module.scss";
-// import propTypes from "prop-types";
 
 const ButtonGo = ({ buttonName, type, onClick, btn_auth }) => {
   return (
-    <button
-      className={`${styles.btn} ${styles.btn_orange} ${btn_auth}`}
-      type={type}
-      onClick={onClick}
-    >
+    <button className={`${styles.btn} ${styles.btn_orange} ${btn_auth}`} type={type} onClick={onClick}>
       {buttonName}
     </button>
   );
@@ -19,11 +14,7 @@ const ButtonGo = ({ buttonName, type, onClick, btn_auth }) => {
 
 const ButtonAdd = ({ type, onClick }) => {
   return (
-    <button
-      className={`${styles.btn_add} ${styles.btn_orange_add}`}
-      type={type}
-      onClick={onClick}
-    >
+    <button className={`${styles.btn_add} ${styles.btn_orange_add}`} type={type} onClick={onClick}>
       <svg width="20" height="20" fill="white">
         <use href={sprite + "#add"} />
       </svg>

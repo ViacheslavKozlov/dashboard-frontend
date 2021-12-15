@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Button } from "../../button/Button";
 import {
   AuthBgContainer,
@@ -8,7 +8,6 @@ import {
 } from "./AuthFormStyled";
 import { useSelector } from "react-redux";
 import { regSuccessSelector } from "../../../redux/auth/authSelectors";
-// import sprite from "../../../icons/icons.svg";
 
 const AuthForm = ({ signUp, logIn }) => {
   const [email, setEmail] = useState("");
@@ -16,7 +15,6 @@ const AuthForm = ({ signUp, logIn }) => {
   const [displayName, setDisplayName] = useState("");
 
   const location = useLocation();
-  const history = useHistory();
 
   const regSuccess = useSelector(regSuccessSelector);
 
@@ -47,7 +45,7 @@ const AuthForm = ({ signUp, logIn }) => {
           {location.pathname === "/register" ? (
             <p className="authChooseText">
               {" "}
-              Choose your name to SignUp or{" "}
+              Please SignUp or{" "}
               <a className="authLink" href="/">
                 LogIn
               </a>
@@ -55,13 +53,12 @@ const AuthForm = ({ signUp, logIn }) => {
           ) : (
             <p className="authChooseText">
               {" "}
-              Choose your name to LogIn or{" "}
+              Please LogIn or{" "}
               <a className="authLink" href="/register">
                 SignUp
               </a>
             </p>
           )}
-          {/*<a href="/register">SIGN UP</a>*/}
         </AuthDiscrContainer>
         <form
           action="/"
@@ -114,10 +111,6 @@ const AuthForm = ({ signUp, logIn }) => {
               text="go!"
               // eslint-disable-next-line react/style-prop-object
               style="go"
-              onClick={() => {
-                // let path = `/`;
-                history.push("/");
-              }}
             />
           </div>
         </form>
