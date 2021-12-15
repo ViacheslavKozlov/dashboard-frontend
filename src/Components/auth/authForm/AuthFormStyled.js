@@ -5,6 +5,10 @@ import imgTab from "../../../images/tablet-bg.png";
 import imgDesc from "../../../images/desc-bg.png";
 
 export const AuthFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   .authTitle {
     font-weight: 700;
     font-size: 24px;
@@ -46,7 +50,6 @@ export const AuthFormContainer = styled.div`
   input::placeholder {
     font-size: 18px;
     font-weight: 300;
-    font-style: 400;
     line-height: 0.99;
     color: #00d7ff;
   }
@@ -59,7 +62,6 @@ export const AuthFormContainer = styled.div`
   .input {
     display: block;
     font-weight: 300;
-    font-style: 400;
     line-height: 0.99;
     width: 290px;
     height: 18px;
@@ -82,6 +84,7 @@ export const AuthFormContainer = styled.div`
   }
 
   @media ${device.tablet} {
+    display: block;
     .authTitle {
       width: 375px;
       font-size: 20px;
@@ -124,6 +127,7 @@ export const AuthFormContainer = styled.div`
   }
 
   @media ${device.desc} {
+    display: block;
     .authTitle {
       width: 99px;
       font-size: 24px;
@@ -140,6 +144,7 @@ export const AuthFormContainer = styled.div`
       padding-top: 70px;
       text-align: left;
       color: #15395a;
+      letter-spacing: 0.01em;
     }
     .authChooseText {
       font-size: 24px;
@@ -171,6 +176,7 @@ export const AuthBgContainer = styled.div`
   background-image: url(${imgMob});
   background-repeat: no-repeat;
   background-position-y: bottom;
+  background-position-x: center;
   height: 100vh;
 
   @media ${device.tablet} {
