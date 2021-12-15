@@ -33,8 +33,9 @@ const AuthForm = ({ signUp, logIn }) => {
   };
 
   return (
-    <AuthBgContainer>
-      <AuthFormContainer>
+    // <AuthBgContainer>
+    <AuthFormContainer>
+      <AuthBgContainer>
         <AuthDiscrContainer>
           <h1 className="authTitle">Questify</h1>
           <p className="authDicsription">
@@ -114,8 +115,9 @@ const AuthForm = ({ signUp, logIn }) => {
             />
           </div>
         </form>
-      </AuthFormContainer>
-    </AuthBgContainer>
+      </AuthBgContainer>
+    </AuthFormContainer>
+    // </AuthBgContainer>
   );
 };
 
