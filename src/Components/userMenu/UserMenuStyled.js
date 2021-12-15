@@ -42,8 +42,8 @@ export const UserMenuWrapper = styled.div`
   }
 
   .user-logout-logo {
-    width: 22px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     fill: var(--header-symb-color);
     transition: transform 500ms ease-in, fill 500ms ease-in;
   }
