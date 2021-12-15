@@ -7,9 +7,8 @@ import imgDesc from "../../../images/desc-bg.png";
 export const AuthFormContainer = styled.div`
   .authTitle {
     font-weight: 700;
-    font-style: 400;
-    font-size: 24 px;
-    line-height: 0.99;
+    font-size: 24px;
+    line-height: 1;
     margin: 0;
     text-align: left;
     letter-spacing: 0.02em;
@@ -17,11 +16,12 @@ export const AuthFormContainer = styled.div`
   }
 
   .authDicsription {
+    /* margin: 0 0 30px; */
+    display: block;
     width: 290px;
-    height: 87px;
+    /* height: 87px; */
     font-weight: 700;
-    font-style: 400;
-    font-size: 18 px;
+    font-size: 18px;
     line-height: 1.61;
     padding-top: 60px;
     text-align: left;
@@ -30,9 +30,9 @@ export const AuthFormContainer = styled.div`
   }
 
   .authChooseText {
+    display: block;
     font-weight: 400;
-    font-style: 400;
-    font-size: 14 px;
+    font-size: 14px;
     line-height: 3.21;
     padding-top: 30px;
     text-align: left;
@@ -87,23 +87,23 @@ export const AuthFormContainer = styled.div`
   @media ${device.tablet} {
     .authTitle {
       width: 375px;
-      font-size: 20 px;
-      line-height: 0.99;
+      font-size: 20px;
+      line-height: 1;
       text-align: left;
       color: #00d7ff;
     }
     .authDicsription {
       width: 375px;
-      height: 99px;
+      /* height: 99px; */
 
-      font-size: 24 px;
+      font-size: 24px;
       line-height: 1.38;
       padding-top: 52px;
       text-align: left;
       color: #15395a;
     }
     .authChooseText {
-      font-size: 18 px;
+      font-size: 18px;
       line-height: 2.5;
       padding-top: 23px;
       text-align: left;
@@ -130,25 +130,25 @@ export const AuthFormContainer = styled.div`
   @media ${device.desc} {
     .authTitle {
       width: 99px;
-      font-size: 24 px;
-      line-height: 0.99;
+      font-size: 24px;
+      line-height: 1;
       text-align: left;
 
       color: #00d7ff;
     }
     .authDicsription {
       width: 562px;
-      height: 135px;
+      /* height: 135px; */
 
-      font-size: 36 px;
+      font-size: 36px;
       line-height: 1.25;
       padding-top: 70px;
       text-align: left;
       color: #15395a;
     }
     .authChooseText {
-      width: 397px;
-      font-size: 24 px;
+      /* width: 397px; */
+      font-size: 24px;
       line-height: 1.87;
       padding-top: 35px;
       text-align: left;
@@ -200,5 +200,9 @@ export const AuthDiscrContainer = styled.div`
   }
   @media ${device.desc} {
     padding: 193px 489px 23px 229px;
+  }
+
+  .authLink {
+    color: var(--accent-color);
   }
 `;
