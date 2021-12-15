@@ -43,34 +43,25 @@ const AuthForm = ({ signUp, logIn }) => {
             Questify will turn your life into a thrilling game full of amazing
             quests and exciting challenges.
           </p>
-          <p className="authChooseText">
-            {/* Choose&ensp; */}
-            {location.pathname === "/register" ? (
-              <a href="/">
-                <b>Log IN</b>
+
+          {location.pathname === "/register" ? (
+            <p className="authChooseText">
+              {" "}
+              Choose your name to SignUp or{" "}
+              <a className="authLink" href="/">
+                LogIn
               </a>
-            ) : (
-              <b>Log IN</b>
-            )}
-            &ensp;or&ensp;
-            {location.pathname === "/register" ? (
-              <b>SIGN IN</b>
-            ) : (
-              <a href="/register">
-                <b>SIGN UP</b>
+            </p>
+          ) : (
+            <p className="authChooseText">
+              {" "}
+              Choose your name to LogIn or{" "}
+              <a className="authLink" href="/register">
+                SignUp
               </a>
-            )}
-            &ensp;for new users
-          </p>
-          {/* <p className="authChooseText">
-            Choose Log IN or&ensp;
-            {location.pathname === "/register" ? (
-              <a href="/">SIGN IN</a>
-            ) : (
-              <a href="/register">SIGN UP</a>
-            )}
-            &ensp;for new users
-          </p> */}
+            </p>
+          )}
+          {/*<a href="/register">SIGN UP</a>*/}
         </AuthDiscrContainer>
         <form
           action="/"
@@ -89,6 +80,7 @@ const AuthForm = ({ signUp, logIn }) => {
                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                 title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
                 className="input"
+                // autoComplete="off"
               />
             </label>
           )}
@@ -100,6 +92,7 @@ const AuthForm = ({ signUp, logIn }) => {
               name="email"
               placeholder="Email"
               className="input"
+              // autoComplete="off"
             />
           </label>
           <label className="inputName">
@@ -113,11 +106,13 @@ const AuthForm = ({ signUp, logIn }) => {
               name="password"
               placeholder="Password"
               className="input"
+              // autoComplete="off"
             />
           </label>
           <div className="button_wrapper">
             <Button
               text="go!"
+              // eslint-disable-next-line react/style-prop-object
               style="go"
               onClick={() => {
                 // let path = `/`;
