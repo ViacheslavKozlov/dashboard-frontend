@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import { Button } from "../../button/Button";
-import {
-  AuthBgContainer,
-  AuthContainer,
-  AuthDiscrContainer,
-  AuthFormContainer,
-} from "./AuthFormStyled";
+import { AuthBgContainer, AuthDiscrContainer, AuthFormContainer } from "./AuthFormStyled";
 import { useSelector } from "react-redux";
 import { regSuccessSelector } from "../../../redux/auth/authSelectors";
 // import sprite from "../../../icons/icons.svg";
@@ -21,18 +16,16 @@ const AuthForm = ({ signUp, logIn }) => {
 
   const regSuccess = useSelector(regSuccessSelector);
 
-  const onHandleChange = (e) => {
+  const onHandleChange = e => {
     const { name, value } = e.target;
     name === "email" && setEmail(value);
     name === "password" && setPassword(value);
     name === "displayName" && setDisplayName(value);
   };
 
-  const onHandleSubmit = (e) => {
+  const onHandleSubmit = e => {
     e.preventDefault();
-    location.pathname === "/register"
-      ? signUp({ email, password, displayName })
-      : logIn({ email, password });
+    location.pathname === "/register" ? signUp({ email, password, displayName }) : logIn({ email, password });
   };
 
   return (
@@ -41,8 +34,7 @@ const AuthForm = ({ signUp, logIn }) => {
         <AuthDiscrContainer>
           <h1 className="authTitle">Questify</h1>
           <p className="authDicsription">
-            Questify will turn your life into a thrilling game full of amazing
-            quests and exciting challenges.
+            Questify will turn your life into a thrilling game full of amazing quests and exciting challenges.
           </p>
 
           {location.pathname === "/register" ? (
@@ -64,12 +56,7 @@ const AuthForm = ({ signUp, logIn }) => {
           )}
           {/*<a href="/register">SIGN UP</a>*/}
         </AuthDiscrContainer>
-        <form
-          action="/"
-          target="_self"
-          onSubmit={onHandleSubmit}
-          className="authForm"
-        >
+        <form action="/" target="_self" onSubmit={onHandleSubmit} className="authForm">
           {location.pathname === "/register" && !regSuccess && (
             <label className="inputName">
               <input
@@ -86,14 +73,7 @@ const AuthForm = ({ signUp, logIn }) => {
             </label>
           )}
           <label className="inputName">
-            <input
-              type="text"
-              value={email}
-              onChange={onHandleChange}
-              name="email"
-              placeholder="Email"
-              className="input"
-            />
+            <input type="text" value={email} onChange={onHandleChange} name="email" placeholder="Email" className="input" />
           </label>
           <label className="inputName">
             <input
@@ -111,6 +91,7 @@ const AuthForm = ({ signUp, logIn }) => {
           <div className="button_wrapper">
             <Button
               text="go!"
+              // eslint-disable-next-line react/style-prop-object
               style="go"
               onClick={() => {
                 // let path = `/`;

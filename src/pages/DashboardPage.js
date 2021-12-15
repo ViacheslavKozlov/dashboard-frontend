@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
 import CardList from "../Components/cardList/CardList";
 import Icon from "../Components/Icon";
 import Loaders from "../Components/loader/Loader";
@@ -14,7 +13,7 @@ import {
   getChallengeCardsSelector,
   getDoneCardsSelector,
   getIsLoadingSelector,
-  getUnusedCards,
+  getUnusedCards
 } from "../redux/cards/cardsSelectors";
 import { DashboardPageStyled } from "./DashboardPageStyled";
 import Header from "../Components/header/Header";
@@ -25,9 +24,12 @@ const DashboardPage = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getActiveCardsOperation());
-  }, [dispatch]);
+  useEffect(
+    () => {
+      dispatch(getActiveCardsOperation());
+    },
+    [dispatch]
+  );
 
   const onShowDone = () => {
     setDoneIsShown(!doneIsShown);
@@ -43,7 +45,7 @@ const DashboardPage = () => {
   const unusedCards = useSelector(getUnusedCards);
   const isLoading = useSelector(getIsLoadingSelector);
 
-  const getSorted = (list) => {
+  const getSorted = list => {
     return list.sort((a, b) => {
       const dateA = new Date(a.taskDate);
       const dateB = new Date(b.taskDate);
@@ -57,10 +59,7 @@ const DashboardPage = () => {
       return 0;
     });
   };
-  const todayCards = [
-    ...getSorted(activeTodayCards),
-    ...getSorted(challengeCards),
-  ];
+  const todayCards = [...getSorted(activeTodayCards), ...getSorted(challengeCards)];
   return (
     <>
       <Header />
@@ -73,10 +72,7 @@ const DashboardPage = () => {
             </ModalLoader>
           )}
           <TodaySection cards={todayCards} />
-          <SectionMainPage
-            title="TOMORROW"
-            cardList={getSorted(activeTomorrowCards)}
-          />
+          <SectionMainPage title="TOMORROW" cardList={getSorted(activeTomorrowCards)} />
 
           <SectionMainPage
             // className="unusedContainer"
@@ -88,11 +84,7 @@ const DashboardPage = () => {
             <div className="lineWrapper">
               <button className="btnDone" onClick={onShowDone}>
                 DONE
-                <Icon
-                  className="IconDone"
-                  name={doneIsShown ? "triangle-down" : "triangle-up"}
-                  size={12}
-                />
+                <Icon className="IconDone" name={doneIsShown ? "triangle-down" : "triangle-up"} size={12} />
               </button>
             </div>
 

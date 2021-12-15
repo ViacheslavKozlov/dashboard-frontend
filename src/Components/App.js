@@ -5,35 +5,28 @@ import { Switch } from "react-router";
 import PublicRoute from "../routes/PuplicRoute";
 import PrivateRoute from "../routes/PrivateRoute";
 import { useSelector } from "react-redux";
-import {
-  isAuthSelector,
-  regSuccessSelector,
-} from "../redux/auth/authSelectors.js";
+import { regSuccessSelector } from "../redux/auth/authSelectors.js";
 import { Redirect } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { getErrorCardsSelector } from "../redux/cards/cardsSelectors";
 import "react-toastify/dist/ReactToastify.css";
 
-const DashboardPage = lazy(
-  () =>
-    import("../pages/DashboardPage.js") /*webpackChunkName: 'DashboardPage' */
-);
-const LoginPage = lazy(
-  () => import("../pages/LoginPage.js") /*webpackChunkName: 'LoginPage' */
-);
-const RegPage = lazy(
-  () => import("../pages/RegPage.js") /*webpackChunkName: 'RegPage' */
-);
+const DashboardPage = lazy(() => import("../pages/DashboardPage.js") /*webpackChunkName: 'DashboardPage' */);
+const LoginPage = lazy(() => import("../pages/LoginPage.js") /*webpackChunkName: 'LoginPage' */);
+const RegPage = lazy(() => import("../pages/RegPage.js") /*webpackChunkName: 'RegPage' */);
 
 function App() {
-  const isLoggedIn = useSelector(isAuthSelector);
+  // const isLoggedIn = useSelector(isAuthSelector);
   const regSuccess = useSelector(regSuccessSelector);
 
   const error = useSelector(getErrorCardsSelector);
 
-  useEffect(() => {
-    toast.error(error);
-  }, [error]);
+  useEffect(
+    () => {
+      toast.error(error);
+    },
+    [error]
+  );
 
   return (
     <>
