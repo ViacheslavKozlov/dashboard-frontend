@@ -12,7 +12,6 @@ const RegPage = lazy(() => import("../pages/RegPage.js") /*webpackChunkName: 'Re
 
 const MainRoutes = () => {
   const isLoggedIn = useSelector(isAuthSelector);
-  console.log(isLoggedIn);
 
   return (
     <>

@@ -10,10 +10,8 @@ const UserMenu = () => {
   const dispatch = useDispatch();
   const userName = useSelector(userSelector);
   const { isMobileDevice } = useDeviceSizes();
-  console.log(userName);
   const logout = () => {
     dispatch(logoutOperation());
-    console.log("logout");
   };
   return (
     <UserMenuWrapper>

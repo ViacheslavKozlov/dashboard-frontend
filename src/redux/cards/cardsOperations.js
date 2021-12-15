@@ -83,7 +83,6 @@ const editCardOperation = (cardId, card) => async dispatch => {
   dispatch(editCardRequest());
   try {
     const { data } = await axios.patch(`${BASE_URL}/${cardId}`, card);
-    // console.log(response);
     dispatch(
       editCardSucces({
         category: data.data.contact.category,

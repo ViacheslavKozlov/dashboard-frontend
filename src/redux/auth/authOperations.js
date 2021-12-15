@@ -31,7 +31,6 @@ const registerOperation = user => async dispatch => {
     token.set(data.data.token);
     dispatch(registerAuthSuccess(data.data));
   } catch (error) {
-    console.log(error.message);
     dispatch(registerAuthError(error.message));
   }
 };
@@ -40,7 +39,6 @@ const loginOperation = user => async dispatch => {
   dispatch(loginAuthRequest());
   try {
     const { data } = await axios.post(`${BASE_URL}/users/login`, user);
-    console.log(data);
     token.set(data.data.token);
     dispatch(loginAuthSuccess(data.data));
   } catch (error) {
