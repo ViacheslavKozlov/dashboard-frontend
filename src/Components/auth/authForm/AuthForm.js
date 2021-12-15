@@ -44,15 +44,25 @@ const AuthForm = ({ signUp, logIn }) => {
             Questify will turn your life into a thrilling game full of amazing
             quests and exciting challenges.
           </p>
-          <p className="authChooseText">
-            Choose your name to Log in or
-            {location.pathname === "/register" ? (
-              <a href="/">SIGN IN</a>
-            ) : (
-              <a href="/register">SIGN UP</a>
-            )}
-            {/*<a href="/register">SIGN UP</a>*/}
-          </p>
+
+          {location.pathname === "/register" ? (
+            <p className="authChooseText">
+              {" "}
+              Choose your name to SignUp or{" "}
+              <a className="authLink" href="/">
+                LogIn
+              </a>
+            </p>
+          ) : (
+            <p className="authChooseText">
+              {" "}
+              Choose your name to LogIn or{" "}
+              <a className="authLink" href="/register">
+                SignUp
+              </a>
+            </p>
+          )}
+          {/*<a href="/register">SIGN UP</a>*/}
         </AuthDiscrContainer>
         <form
           action="/"
