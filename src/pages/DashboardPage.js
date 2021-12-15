@@ -33,10 +33,6 @@ const DashboardPage = () => {
 
   const onShowDone = () => {
     setDoneIsShown(!doneIsShown);
-
-    // if (doneCards.length < 1 && !doneIsShown) {
-    //   dispatch(getDoneCardsOperation());
-    // }
   };
   const activeTodayCards = useSelector(getActiveTodayCardsSelector);
   const activeTomorrowCards = useSelector(getActiveTomorrowCardsSelector);

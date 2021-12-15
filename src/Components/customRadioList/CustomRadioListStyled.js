@@ -47,8 +47,7 @@ export const CustomRadioListStyled = styled.div`
     letter-spacing: 0.02em;
     color: var(--secondary-text-color);
     background-color: var(--white);
-    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.05),
-      3px 4px 4px rgba(21, 57, 90, 0.05);
+    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.05), 3px 4px 4px rgba(21, 57, 90, 0.05);
     border-radius: 10px;
   }
 
@@ -126,62 +125,51 @@ export const CustomRadioListStyled = styled.div`
   }
   .difficulty_radio[value="normal"]:hover ~ .radio_outline,
   .difficulty_radio[value="normal"]:focus ~ .radio_outline {
-    /* border-color: var(--main-green); */
     opacity: 1;
     box-shadow: 0px 0px 3px 1px #24d40c;
   }
   .difficulty_radio[value="hard"]:hover ~ .radio_outline,
   .difficulty_radio[value="hard"]:focus ~ .radio_outline {
-    /* border-color: #db0837; */
     box-shadow: 0px 0px 3px 1px #db0837;
     opacity: 1;
   }
   .difficulty_radio[value="easy"]:checked ~ .radio_outline {
     box-shadow: 0px 0px 3px 1px var(--accent-color);
-    /* border-color: var(--primary-color); */
     opacity: 1;
   }
   .difficulty_radio[value="normal"]:checked ~ .radio_outline {
     box-shadow: 0px 0px 3px 1px #24d40c;
-    /* border-color: var(--main-green); */
     opacity: 1;
   }
   .difficulty_radio[value="hard"]:checked ~ .radio_outline {
     box-shadow: 0px 0px 3px 1px #db0837;
-    /* border-color: #db0837; */
     opacity: 1;
   }
   .difficulty_dark_radio[value="easy"]:hover ~ .radio_outline,
   .difficulty_dark_radio[value="easy"]:focus ~ .radio_outline {
     box-shadow: 0px 0px 3px 1px var(--accent-color);
-    /* border-color: var(--accent-color); */
     opacity: 1;
   }
   .difficulty_dark_radio[value="normal"]:hover ~ .radio_outline,
   .difficulty_dark_radio[value="normal"]:focus ~ .radio_outline {
     box-shadow: 0px 0px 3px 1px var(#24d40c);
-    /* border-color: var(#24d40c);   */
     opacity: 1;
   }
   .difficulty_dark_radio[value="hard"]:hover ~ .radio_outline,
   .difficulty_dark_radio[value="hard"]:focus ~ .radio_outline {
     box-shadow: 0px 0px 3px 1px #db0837;
-    /* border-color: #db0837; */
     opacity: 1;
   }
   .difficulty_dark_radio[value="easy"]:checked ~ .radio_outline {
     box-shadow: 0px 0px 3px 1px var(--accent-color);
-    /* border-color: var(--accent-color); */
     opacity: 1;
   }
   .difficulty_dark_radio[value="normal"]:checked ~ .radio_outline {
     box-shadow: 0px 0px 3px 1px #24d40c;
-    /* border-color: var(#24d40c); */
     opacity: 1;
   }
   .difficulty_dark_radio[value="hard"]:checked ~ .radio_outline {
     box-shadow: 0px 0px 3px 1px #db0837;
-    /* border-color: #db0837; */
     opacity: 1;
   }
 
@@ -201,8 +189,7 @@ export const CustomRadioListStyled = styled.div`
     height: 130px;
     padding: 4px 2px;
     background-color: var(--white);
-    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.05),
-      3px 4px 4px rgba(21, 57, 90, 0.05);
+    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.05), 3px 4px 4px rgba(21, 57, 90, 0.05);
     border-radius: 10px;
     z-index: 15;
   }

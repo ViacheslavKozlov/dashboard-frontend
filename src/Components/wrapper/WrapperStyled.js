@@ -23,8 +23,6 @@ export const WrapperStyled = styled.div`
     .container {
       margin: 0 auto;
       max-width: 1020px;
-      /* padding-left: 39px;
-      padding-right: 39px; */
     }
   }
 
@@ -33,9 +31,6 @@ export const WrapperStyled = styled.div`
       margin: 0 auto;
       width: 1280px;
       max-width: 1280px;
-      /* margin: 0 50px; */
-      /* padding-left: 72px;
-      padding-right: 72px; */
     }
   }
 `;

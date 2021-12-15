@@ -8,34 +8,28 @@ import {
   logoutAuthSuccess,
   registerAuthError,
   registerAuthRequest,
-  registerAuthSuccess,
+  registerAuthSuccess
 } from "./authActions";
 
 const authUserReducer = createReducer(null, {
-  // [registerAuthSuccess]: (_, { payload }) => payload,
-
   [registerAuthSuccess]: (_, { payload }) => ({
     userName: payload.displayName,
     email: payload.email,
-    iSRegistration: true,
+    iSRegistration: true
   }),
-
-  // [loginAuthSuccess]: (_, { payload }) => payload,
 
   [loginAuthSuccess]: (_, { payload }) => ({
     userName: payload.user.name,
-    email: payload.user.email,
+    email: payload.user.email
   }),
 
-  // [loginAuthSuccess]: (_, { payload }) => payload,
-
-  [logoutAuthSuccess]: () => null,
+  [logoutAuthSuccess]: () => null
 });
 
 const authTokenReducer = createReducer(null, {
   [registerAuthSuccess]: (_, { payload }) => payload.token,
   [loginAuthSuccess]: (_, { payload }) => payload.token,
-  [logoutAuthSuccess]: () => null,
+  [logoutAuthSuccess]: () => null
 });
 
 const authLoadingReducer = createReducer(false, {
@@ -47,7 +41,7 @@ const authLoadingReducer = createReducer(false, {
   [logoutAuthSuccess]: () => false,
   [registerAuthError]: () => false,
   [loginAuthError]: () => false,
-  [logoutAuthError]: () => false,
+  [logoutAuthError]: () => false
 });
 
 const authErrorReducer = createReducer("", {
@@ -56,12 +50,12 @@ const authErrorReducer = createReducer("", {
   [logoutAuthError]: (_, { payload }) => payload,
   [registerAuthRequest]: () => "",
   [loginAuthRequest]: () => "",
-  [logoutAuthRequest]: () => "",
+  [logoutAuthRequest]: () => ""
 });
 
 export const authReducer = combineReducers({
   user: authUserReducer,
   token: authTokenReducer,
   isLoading: authLoadingReducer,
-  error: authErrorReducer,
+  error: authErrorReducer
 });

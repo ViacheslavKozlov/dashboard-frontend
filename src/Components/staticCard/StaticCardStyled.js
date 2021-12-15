@@ -13,8 +13,7 @@ export const StaticCardStyled = styled.div`
     position: relative;
     cursor: pointer;
 
-    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
-      3px 4px 4px rgba(21, 57, 90, 0.03);
+    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03), 3px 4px 4px rgba(21, 57, 90, 0.03);
     transition: box-shadow 300ms ease-in-out;
   }
 
@@ -32,8 +31,7 @@ export const StaticCardStyled = styled.div`
     border-radius: 10px;
     position: relative;
     cursor: pointer;
-    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
-      3px 4px 4px rgba(21, 57, 90, 0.03);
+    box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03), 3px 4px 4px rgba(21, 57, 90, 0.03);
     transition: box-shadow 300ms ease-in-out;
     background: var(--challenge-main-bg-color);
   }
@@ -57,7 +55,6 @@ export const StaticCardStyled = styled.div`
     margin-left: 5px;
     height: 16px;
     width: 16px;
-    /* filter: drop-shadow(0px 3px 4px rgba(0, 215, 255, 0.25)); */
   }
   .cardType {
     font-style: normal;
@@ -86,7 +83,6 @@ export const StaticCardStyled = styled.div`
     width: inherit;
     text-overflow: ellipsis;
     overflow: hidden;
-    /* white-space: nowrap; */
     display: block;
     color: var(--white);
   }
@@ -107,7 +103,6 @@ export const StaticCardStyled = styled.div`
     color: var(--main-text-color);
     text-overflow: ellipsis;
     overflow: hidden;
-    /* white-space: nowrap; */
     display: block;
   }
 

@@ -7,11 +7,7 @@ import CompletedCard from "../completedCard/CompletedCard";
 import DateTimePicker from "../dateTimePicker/DateTimePicker";
 import OptionsPicker from "../optionsPicker/OptionsPicker";
 import Icon from "../Icon";
-import {
-  addNewCardOperation,
-  editCardOperation,
-  removeCardOperation,
-} from "../../redux/cards/cardsOperations";
+import { addNewCardOperation, editCardOperation, removeCardOperation } from "../../redux/cards/cardsOperations";
 import { addNewCardError, editCardError } from "../../redux/cards/cardsActions";
 import { CreateEditCardStyled } from "./CreateEditCardStyled";
 
@@ -19,7 +15,7 @@ const TITLES = {
   EDIT_CHALLENGE: "EDIT CHALLENGE",
   CREATE_CHALLENGE: "CREATE NEW CHALLENGE",
   EDIT_QUEST: "EDIT QUEST",
-  CREATE_QUEST: "CREATE NEW QUEST",
+  CREATE_QUEST: "CREATE NEW QUEST"
 };
 
 const ADDITIONAL_TIME = 60000;
@@ -34,11 +30,10 @@ const CreateEditCard = ({
   cardId = null,
   handleHideCard,
   handleCardCompletedStatus,
-  onCompletingModalClosed,
+  onCompletingModalClosed
 }) => {
   const dispatch = useDispatch();
   const [isDeleting, setIsDeleting] = useState(false);
-  // const [completed, setCompleted] = useState(isCompletedProp);
   const [taskName, setTaskName] = useState(textProp);
   const [isChallenge, setIsChallenge] = useState(isChallengeProp);
   const [category, setCategory] = useState(categoryProp);
@@ -55,12 +50,12 @@ const CreateEditCard = ({
 
   const handleDeleteCard = () => dispatch(removeCardOperation(cardId));
 
-  const onInputChange = (e) => {
+  const onInputChange = e => {
     setTaskName(e.target.value);
   };
 
   const handleCardTypeToggle = () => {
-    setIsChallenge((prevState) => !prevState);
+    setIsChallenge(prevState => !prevState);
   };
 
   const onClickCreateCard = () =>
@@ -71,7 +66,7 @@ const CreateEditCard = ({
         difficulty,
         category,
         isChallenge,
-        completed,
+        completed
       })
     );
 
@@ -85,7 +80,7 @@ const CreateEditCard = ({
     handleHideCard();
   };
 
-  const onClickEditCard = (date) =>
+  const onClickEditCard = date =>
     dispatch(
       editCardOperation(cardId, {
         taskName,
@@ -93,7 +88,7 @@ const CreateEditCard = ({
         completed,
         category,
         difficulty,
-        taskDate: moment(date).format("YYYY-MM-DD HH:mm"),
+        taskDate: moment(date).format("YYYY-MM-DD HH:mm")
       })
     );
 
@@ -114,7 +109,7 @@ const CreateEditCard = ({
 
   return (
     <CreateEditCardStyled>
-      <div className="cardBackdrop" onClick={handleHideCard}></div>
+      <div className="cardBackdrop" onClick={handleHideCard} />
       <div className={isChallenge ? "cardChallenge" : "card"}>
         {completed && (
           <CompletedCard
@@ -132,27 +127,12 @@ const CreateEditCard = ({
           />
         )}
         <div className="cardTopButtons">
-          <OptionsPicker
-            type="difficulty"
-            getOptionValue={setDifficulty}
-            initialValue={difficulty}
-            isChallenge={isChallenge}
-          />
+          <OptionsPicker type="difficulty" getOptionValue={setDifficulty} initialValue={difficulty} isChallenge={isChallenge} />
           <button type="button" onClick={handleCardTypeToggle}>
             {isChallenge ? (
-              <Icon
-                className="trophyIcon"
-                name="trophy"
-                color="#00d7ff"
-                size={15}
-              />
+              <Icon className="trophyIcon" name="trophy" color="#00d7ff" size={15} />
             ) : (
-              <Icon
-                className="starIcon"
-                name="Star"
-                color="#00d7ff"
-                size={15}
-              />
+              <Icon className="starIcon" name="Star" color="#00d7ff" size={15} />
             )}
           </button>
         </div>
@@ -182,43 +162,23 @@ const CreateEditCard = ({
           <DateTimePicker deadline={taskDate} handleDateChange={setTaskDate} />
         </div>
         <div className="cardBottomButtons">
-          <OptionsPicker
-            type="category"
-            getOptionValue={setCategory}
-            initialValue={category}
-            isChallenge={isChallenge}
-          />
+          <OptionsPicker type="category" getOptionValue={setCategory} initialValue={category} isChallenge={isChallenge} />
           <div className="cardOperationsButtons">
             {textProp ? (
               <ul className="buttonsList">
                 <li>
                   <button type="button" onClick={handleEditCard}>
-                    <Icon
-                      className="saveIcon"
-                      name="save"
-                      color="#00d7ff"
-                      size={10}
-                    />
+                    <Icon className="saveIcon" name="save" color="#00d7ff" size={10} />
                   </button>
                 </li>
                 <li>
                   <button type="button" onClick={onDeleteBtnClick}>
-                    <Icon
-                      className="clearIcon"
-                      name="clear"
-                      color="#DB0837"
-                      size={10}
-                    />
+                    <Icon className="clearIcon" name="clear" color="#DB0837" size={10} />
                   </button>
                 </li>
                 <li>
                   <button type="button" onClick={handleCardCompletedStatus}>
-                    <Icon
-                      className="doneIcon"
-                      name="done"
-                      color="#24d40c"
-                      size={14}
-                    />
+                    <Icon className="doneIcon" name="done" color="#24d40c" size={14} />
                   </button>
                 </li>
               </ul>
@@ -226,20 +186,11 @@ const CreateEditCard = ({
               <ul className="buttonsList">
                 <li>
                   <button type="button" onClick={onDeleteBtnClick}>
-                    <Icon
-                      className="clearIcon"
-                      name="clear"
-                      color="#db0837"
-                      size={10}
-                    />
+                    <Icon className="clearIcon" name="clear" color="#db0837" size={10} />
                   </button>
                 </li>
                 <li>
-                  <button
-                    className="createBtn"
-                    type="button"
-                    onClick={handleCreateCard}
-                  >
+                  <button className="createBtn" type="button" onClick={handleCreateCard}>
                     <span>CREATE</span>
                   </button>
                 </li>
@@ -260,7 +211,7 @@ CreateEditCard.propTypes = {
   categoryProp: PropTypes.string,
   deadlineProp: PropTypes.string,
   cardId: PropTypes.string,
-  handleHideCard: PropTypes.func.isRequired,
+  handleHideCard: PropTypes.func.isRequired
 };
 
 export default CreateEditCard;

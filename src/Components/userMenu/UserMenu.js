@@ -11,7 +11,6 @@ const UserMenu = () => {
   const userName = useSelector(userSelector);
   const { isMobileDevice } = useDeviceSizes();
   console.log(userName);
-  // const userName = "MX";
   const logout = () => {
     dispatch(logoutOperation());
     console.log("logout");
@@ -19,11 +18,7 @@ const UserMenu = () => {
   return (
     <UserMenuWrapper>
       <p className="user-logo">{userName.charAt(0).toUpperCase()}</p>
-      {!isMobileDevice && (
-        <p className="user-name">
-          {userName.charAt(0).toUpperCase() + userName.substr(1)}'s Quest Log
-        </p>
-      )}
+      {!isMobileDevice && <p className="user-name">{userName.charAt(0).toUpperCase() + userName.substr(1)}'s Quest Log</p>}
       <button className="user-logout" type="submit" onClick={logout}>
         <svg className="user-logout-logo">
           <use href={icons + "#icon-logout"} />

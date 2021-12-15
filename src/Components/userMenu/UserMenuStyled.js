@@ -53,7 +53,3 @@ export const UserMenuWrapper = styled.div`
     transform: scale(1.1);
   }
 `;
-// &:hover {
-//       fill: #5f73a1;
-//       cursor: pointer;
-//     }

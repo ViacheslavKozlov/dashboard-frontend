@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import React, { useState } from "react";
 import Button from "../button/Button";
 import Modal from "../modal/Modal";
@@ -7,14 +8,14 @@ import Vertical from "../vertical/Vertical";
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
-    setIsOpen((prev) => !prev);
+    setIsOpen(prev => !prev);
   };
 
   return (
     <>
       {!isOpen && (
         <>
-          <Close toggle={toggle}></Close>
+          <Close toggle={toggle} />
           <Button text="DELETE" style="delete" />
           <Button text="+" style="plus" />
           <Button text="go!" style="go" />

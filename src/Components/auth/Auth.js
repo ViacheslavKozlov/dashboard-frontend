@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { registerOperation, loginOperation } from "../../redux/auth/authOperations";
-// import { regSuccessSelector } from "../../redux/auth/authSelectors";
 import AuthForm from "./authForm/AuthForm";
 
 const Auth = () => {

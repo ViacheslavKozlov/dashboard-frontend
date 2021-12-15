@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const CreateEditCardStyled = styled.div`
   .cardBackdrop {
-    /* z-index: 101; */
-    /* z-index: 0; */
     position: fixed;
     top: 0;
     bottom: 0;
@@ -22,11 +20,6 @@ export const CreateEditCardStyled = styled.div`
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: box-shadow 300ms ease-in-out, background-color 300ms ease-in-out;
   }
-
-  /* .card:hover {
-    box-shadow: -3px 0px 5px rgba(21, 57, 90, 0.08),
-      3px 5px 5px rgba(21, 57, 90, 0.08);
-  } */
 
   .cardChallenge {
     z-index: 102;

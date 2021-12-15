@@ -7,7 +7,6 @@ import "./CompletedAnimation.css";
 
 const CompletedCard = ({ taskName, isChallenge, onCompleted, onClose }) => {
   const classList = isChallenge ? "challengeBox" : "questBox";
-
   const classHiddenTrophy = isChallenge ? "" : "hidden";
   const classHiddenTarget = isChallenge ? "hidden" : "";
 
@@ -26,24 +25,12 @@ const CompletedCard = ({ taskName, isChallenge, onCompleted, onClose }) => {
           </p>
         </div>
         <div className="awardBox">
-          <CSSTransition
-            in={true}
-            appear={true}
-            timeout={1250}
-            classNames="leftClouds"
-            unmountOnExit
-          >
+          <CSSTransition in={true} appear={true} timeout={1250} classNames="leftClouds" unmountOnExit>
             <svg className="leftClouds">
               <use xlinkHref={`${Icons}#icon-left-clouds`} />
             </svg>
           </CSSTransition>
-          <CSSTransition
-            in={true}
-            appear={true}
-            timeout={1250}
-            classNames="rightClouds"
-            unmountOnExit
-          >
+          <CSSTransition in={true} appear={true} timeout={1250} classNames="rightClouds" unmountOnExit>
             <svg className="rightClouds">
               <use xlinkHref={`${Icons}#icon-right-clouds`} />
             </svg>
@@ -53,48 +40,24 @@ const CompletedCard = ({ taskName, isChallenge, onCompleted, onClose }) => {
           </svg>
 
           <div className={classHiddenTrophy}>
-            <CSSTransition
-              in={true}
-              appear={true}
-              timeout={1000}
-              classNames="trophy"
-              unmountOnExit
-            >
+            <CSSTransition in={true} appear={true} timeout={1000} classNames="trophy" unmountOnExit>
               <svg className="iconTrophy">
                 <use xlinkHref={`${Icons}#icon-trophy-cup`} />
               </svg>
             </CSSTransition>
-            <CSSTransition
-              in={true}
-              appear={true}
-              timeout={2000}
-              classNames="first"
-              unmountOnExit
-            >
+            <CSSTransition in={true} appear={true} timeout={2000} classNames="first" unmountOnExit>
               <svg className="iconFirst">
                 <use xlinkHref={`${Icons}#icon-first`} />
               </svg>
             </CSSTransition>
           </div>
           <div className={classHiddenTarget}>
-            <CSSTransition
-              in={true}
-              appear={true}
-              timeout={1000}
-              classNames="target"
-              unmountOnExit
-            >
+            <CSSTransition in={true} appear={true} timeout={1000} classNames="target" unmountOnExit>
               <svg className="iconTarget">
                 <use xlinkHref={`${Icons}#icon-target`} />
               </svg>
             </CSSTransition>
-            <CSSTransition
-              in={true}
-              appear={true}
-              timeout={2000}
-              classNames="arrow"
-              unmountOnExit
-            >
+            <CSSTransition in={true} appear={true} timeout={2000} classNames="arrow" unmountOnExit>
               <svg className="iconArrow">
                 <use xlinkHref={`${Icons}#icon-arrow`} />
               </svg>
@@ -115,7 +78,7 @@ CompletedCard.propTypes = {
   text: PropTypes.string,
   isChallenge: PropTypes.bool,
   onClick: PropTypes.func,
-  onClose: PropTypes.func,
+  onClose: PropTypes.func
 };
 
 export default CompletedCard;
