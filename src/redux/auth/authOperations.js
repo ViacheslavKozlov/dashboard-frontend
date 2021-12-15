@@ -8,7 +8,7 @@ import {
   loginAuthError,
   logoutAuthRequest,
   logoutAuthSuccess,
-  logoutAuthError,
+  logoutAuthError
 } from "./authActions";
 
 const BASE_URL = "https://afternoon-garden-29997.herokuapp.com/api";
@@ -20,10 +20,10 @@ const token = {
   },
   unset() {
     axios.defaults.headers.common.Authorization = ``;
-  },
+  }
 };
 
-const registerOperation = (user) => async (dispatch) => {
+const registerOperation = user => async dispatch => {
   dispatch(registerAuthRequest());
 
   try {
@@ -36,7 +36,7 @@ const registerOperation = (user) => async (dispatch) => {
   }
 };
 
-const loginOperation = (user) => async (dispatch) => {
+const loginOperation = user => async dispatch => {
   dispatch(loginAuthRequest());
   try {
     const { data } = await axios.post(`${BASE_URL}/users/login`, user);
@@ -48,7 +48,7 @@ const loginOperation = (user) => async (dispatch) => {
   }
 };
 
-const logoutOperation = () => async (dispatch) => {
+const logoutOperation = () => async dispatch => {
   dispatch(logoutAuthRequest());
   try {
     await axios.post(`${BASE_URL}/users/logout`);
@@ -59,4 +59,4 @@ const logoutOperation = () => async (dispatch) => {
   }
 };
 
-export { registerOperation, loginOperation, logoutOperation };
+export { token, registerOperation, loginOperation, logoutOperation };
