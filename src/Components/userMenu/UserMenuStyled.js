@@ -50,6 +50,5 @@ export const UserMenuWrapper = styled.div`
 
   .user-logout-logo:hover use {
     fill: var(--accent-color);
-    transform: scale(1.1);
   }
 `;
